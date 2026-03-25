@@ -19,7 +19,6 @@
 </head>
 <body>
 
-    <!-- شريط التحميل -->
     <div id="page-loader" class="page-loader">
         <div class="loader-atom">
             <div class="nucleus"></div>
@@ -30,7 +29,6 @@
         <p class="loader-text">كيمستوري</p>
     </div>
 
-    <!-- زر تثبيت PWA -->
     <div id="install-banner" class="install-banner hidden">
         <div class="install-banner-content">
             <div class="install-icon-wrap">
@@ -47,14 +45,12 @@
         </div>
     </div>
 
-    <!-- شريط الجملة التحفيزية -->
     <div class="notification-bar">
         <i class="fas fa-fire quote-icon"></i>
         <span id="daily-quote" class="daily-quote-text">يتم تحميل حلمك..</span>
         <i class="fas fa-star quote-icon"></i>
     </div>
 
-    <!-- الهيدر -->
     <header>
         <div class="header-bg-shapes">
             <div class="shape shape-1"></div>
@@ -75,10 +71,10 @@
                         دكتور الكيمياء
                     </span>
                     <h1 class="teacher-name">مستر فارس</h1>
-                    <p class="description-text">
+                    <span class="description-text">
                         <i class="fas fa-heart heart-icon"></i>
                         شرح كامل ومجاني تماماً لوجه الله تعالى
-                    </p>
+                    </span>
                     <div class="social-links-overlap">
                         <a href="https://wa.me/201001499397" target="_blank" class="social-btn whatsapp" title="واتساب">
                             <i class="fab fa-whatsapp"></i>
@@ -97,7 +93,6 @@
                 </div>
             </div>
 
-            <!-- إحصائيات سريعة -->
             <div class="stats-row">
                 <div class="stat-item">
                     <span class="stat-number">4</span>
@@ -117,7 +112,6 @@
         </div>
     </header>
 
-    <!-- المحتوى الرئيسي -->
     <main class="container content-wrapper">
         <section class="chapters-grid-container" id="chapters-section">
             <div class="section-header">
@@ -129,7 +123,6 @@
             </div>
 
             <div class="chapters-grid" id="main-chapter-grid">
-
                 <button class="chapter-card" data-chapter="ch1" style="--card-color: #009ce4; --delay: 0.1s">
                     <div class="chapter-card-inner">
                         <div class="chapter-number">01</div>
@@ -199,7 +192,6 @@
                 </button>
             </div>
 
-            <!-- لوحة المحاضرات -->
             <div class="lessons-panel" id="lessons-panel">
                 <div class="lessons-header">
                     <button id="back-to-chapters" class="back-btn">
@@ -213,7 +205,6 @@
         </section>
     </main>
 
-    <!-- الفوتر -->
     <footer>
         <div class="container footer-inner">
             <div class="dua-section-card">
@@ -333,7 +324,6 @@
                         <p class="lesson-card-title">${lesson.title}</p>
                         <span class="lesson-type-badge lesson-type-badge--${typeClass}">${typeLabel}</span>
                     </div>
-                    <i class="fas fa-external-link-alt lesson-link-icon"></i>
                 `;
                 lessonItemGrid.appendChild(card);
             });
