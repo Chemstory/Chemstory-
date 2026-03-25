@@ -446,20 +446,20 @@ header {
 }
 .lesson-chapter-title { font-size: 1.2em; font-weight: 800; color: var(--chapter-color, var(--navy)); flex: 1; }
 
+/* تم تعديل هذا الجزء ليصبح قائمة عمودية بدل الشبكة */
 .lessons-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
+    grid-template-columns: 1fr;
+    gap: 12px;
 }
 
 .lesson-card {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    text-align: center;
-    gap: 12px;
+    gap: 16px;
     background: var(--white);
-    padding: 22px 10px;
+    padding: 16px;
     border-radius: 16px;
     text-decoration: none;
     color: var(--text);
@@ -481,7 +481,13 @@ header {
 .lesson-card--workshop .lesson-icon-wrap { background: rgba(24,119,242,0.08); color: var(--fb); }
 .lesson-card--pdf .lesson-icon-wrap { background: rgba(226,87,76,0.08); color: #e2574c; }
 
-.lesson-content { display: flex; flex-direction: column; align-items: center; }
+.lesson-content { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start;
+    text-align: right;
+    flex: 1; 
+}
 .lesson-card-title { font-size: 0.95em; font-weight: 800; line-height: 1.4; color: var(--text); }
 .lesson-type-badge {
     display: inline-block;
@@ -519,7 +525,7 @@ footer { background: var(--white); padding: 36px 0 24px; margin-top: 40px; borde
 /* ============ RESPONSIVE ============ */
 @media (max-width: 600px) {
     .chapters-grid { grid-template-columns: 1fr; }
-    .lessons-grid { grid-template-columns: 1fr 1fr; }
+    /* تم حذف كود الموبايل الخاص بدروس الأبواب عشان تفضل قائمة عمودية دايماً */
     .teacher-name { font-size: 1.75em; }
     .stats-row { padding: 10px 16px; gap: 0; }
     .stat-number { font-size: 1.25em; }
