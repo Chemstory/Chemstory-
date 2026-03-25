@@ -1,0 +1,43 @@
+{
+    "name": "كيمستوري - مستر فارس",
+    "short_name": "كيمستوري",
+    "description": "منصة كيمستوري - شرح مادة الكيمياء للثانوية العامة مع دكتور فارس مجاناً",
+    "start_url": "./index.html",
+    "scope": "./",
+    "display": "standalone",
+    "orientation": "portrait",
+    "background_color": "#09203f",
+    "theme_color": "#09203f",
+    "lang": "ar",
+    "dir": "rtl",
+    "categories": ["education"],
+    "icons": [
+        {
+            "src": "icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "screenshots": [],
+    "shortcuts": [
+        {
+            "name": "الباب الأول",
+            "short_name": "باب ١",
+            "description": "العناصر الانتقالية",
+            "url": "./index.html?chapter=ch1"
+        },
+        {
+            "name": "الباب الثاني",
+            "short_name": "باب ٢",
+            "description": "الكيمياء التحليلية",
+            "url": "./index.html?chapter=ch2"
+        }
+    ]
+}
