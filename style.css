@@ -1,0 +1,284 @@
+/* لوحة الألوان الجديدة */
+:root {
+    --primary-color: #4a0f8a; /* بنفسجي غامق */
+    --secondary-color: #f6f7fb; /* خلفية فاتحة */
+    --notification-bg: #ff2e7e; /* وردي غامق */
+    --text-color: #333;
+    --card-bg: #ffffff;
+    --card-shadow: rgba(0,0,0,0.06);
+    --new-badge-color: #ff2e7e;
+    --wa-color: #25D366;
+    --fb-color: #1877F2;
+    --yt-color: #FF0000;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    width: 95%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 10px;
+}
+
+/* شريط الإشعار العلوي الوردي المنحني (Pill shape) */
+.notification-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--notification-bg);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px; /* شكل الحبة */
+    margin: 15px auto;
+    width: fit-content;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    font-size: 0.95em;
+}
+
+.notification-bar .far {
+    font-size: 1.3em;
+}
+
+/* القسم العلوي (Hero) - الخلفية البنفسجية المضلعة */
+header {
+    background: var(--primary-color);
+    background-image: linear-gradient(135deg, #5c149d, #3c0c77); /* تدرج بنفسجي */
+    background-image: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h20v20H0z" fill="%234a0f8a"/><path d="M0 0l20 20M20 0L0 20" stroke="%235a1a9e" stroke-width="0.5"/></svg>'); /* نقش مضلع خفيف */
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    border-radius: 0 0 40px 40px; /* حواف منحنية سفلية */
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dark-mode-toggle {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: white;
+    font-size: 1.4em;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.header-main-text h1 {
+    font-size: 2.2em;
+    font-weight: 800;
+}
+
+.header-main-text h2 {
+    font-size: 1.3em;
+    font-weight: 500;
+}
+
+.heart-icon {
+    font-size: 1.8em;
+    color: var(--notification-bg);
+    margin: 10px 0;
+}
+
+.intro-text {
+    max-width: 800px;
+    font-size: 0.9em;
+    color: rgba(255,255,255,0.9);
+    margin: 15px 0;
+}
+
+.info-badges {
+    display: flex;
+    gap: 15px;
+    font-size: 0.8em;
+    color: rgba(255,255,255,0.7);
+    margin: 10px 0;
+}
+
+/* صورة المعلم وأزرار التواصل المتراكبة */
+.teacher-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-top: 20px;
+}
+
+.profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 5px solid rgba(255,255,255,0.3);
+    object-fit: cover;
+}
+
+.social-links-overlap {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    bottom: -15px; /* متراكب على الصورة */
+}
+
+.social-links-overlap a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+.social-links-overlap .whatsapp { background: var(--wa-color); }
+.social-links-overlap .wa-channel { background: var(--wa-color); }
+.social-links-overlap .facebook { background: var(--fb-color); }
+.social-links-overlap .youtube { background: var(--yt-color); }
+
+/* قسم شبكة المحاضرات */
+.lectures-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* شبكة مرنة */
+    gap: 15px;
+    padding: 20px 0;
+}
+
+.lectures-grid h3 {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* بطاقة المحاضرة (Card) - نظيفة وبيضاء */
+.lecture-card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.02); /* حد خفيف جداً */
+}
+
+.card-status-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+}
+
+.status-badge.new {
+    background: var(--new-badge-color);
+    color: white;
+    font-size: 0.7em;
+    padding: 3px 8px;
+    border-radius: 15px;
+}
+
+.check-box {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    background: white;
+}
+
+.check-box:checked {
+    background: #4a0f8a;
+    border-color: #4a0f8a;
+    position: relative;
+}
+
+.check-box:checked::after {
+    content: '\f00c';
+    font-family: 'FontAwesome';
+    color: white;
+    font-size: 0.8em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card-body {
+    margin-top: 30px; /* مكان لخانة الاختيار */
+    text-align: right;
+}
+
+.lecture-card h4 {
+    font-size: 1.1em;
+    color: #444;
+}
+
+.lecture-description {
+    font-size: 0.8em;
+    color: #777;
+    margin: 5px 0;
+}
+
+.card-footer-btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.view-btn {
+    display: inline-block;
+    background: #fdf2f7;
+    color: var(--notification-bg);
+    padding: 7px 12px;
+    text-decoration: none;
+    border-radius: 15px;
+    font-size: 0.8em;
+}
+
+.action-btns {
+    display: flex;
+    gap: 8px;
+    font-size: 1em;
+    color: #aaa;
+}
+
+/* الفوتر */
+footer {
+    background: #222;
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+    font-size: 0.8em;
+}
+
+/* تعديلات للشاشات الكبيرة */
+@media (min-width: 768px) {
+    .lectures-grid {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    }
+}
