@@ -1,2 +1,2 @@
-# Chemstory-
+# Chemstory
 chemstory-platform
