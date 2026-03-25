@@ -12,115 +12,76 @@
 <body>
 
     <div class="notification-bar">
-        <span id="daily-quote">عافر، حلمك يستاهل التعب!</span>
-        <i class="fas fa-fire"></i>
+        <span id="daily-quote" class="daily-quote-text">يتم تحميل حلمك.. أنتظر!</span>
+        <i class="fas fa-fire quote-icon"></i>
     </div>
 
     <header>
         <div class="container hero-content">
-            <img src="logo.png" alt="كيمستوري لوجو" class="main-logo" onerror="this.style.display='none'">
+            <img src="logo.png" alt="كيمستوري لوجو" class="main-logo-small" onerror="this.src='https://via.placeholder.com/60?text=C'">
 
-            <div class="header-main-text">
-                <h1>دكتور الكيمياء</h1>
-                <h2>مستر فارس</h2>
-            </div>
-            
-            <p class="intro-text">هنا هتلاقي شرح <strong>منهج الكيمياء للصف الثالث الثانوي</strong> بالكامل، مجاني تماماً على المنصة لوجه الله تعالى ❤️. المحتوى منظم لتسهيل المذاكرة وتوفير وقتك.</p>
-
-            <div class="teacher-profile">
-                <img src="profile.jpg" alt="مستر فارس" class="profile-img" onerror="this.src='https://via.placeholder.com/150'">
-                <div class="social-links-overlap">
-                    <a href="https://wa.me/201001499397" target="_blank" class="whatsapp" title="واتساب"><i class="fab fa-whatsapp"></i></a>
-                    <a href="https://whatsapp.com/channel/0029VaygNoqLikg107YNdh0l" target="_blank" class="wa-channel" title="قناة الواتساب"><i class="fab fa-whatsapp"></i></a>
-                    <a href="https://www.facebook.com/share/12FsQ25HUQN/" target="_blank" class="facebook" title="فيسبوك"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://youtube.com/@Chemist_ibrahem_Fares" target="_blank" class="youtube" title="يوتيوب"><i class="fab fa-youtube"></i></a>
+            <div class="teacher-profile-card">
+                <img src="profile.jpg" alt="مستر فارس" class="profile-img-show" onerror="this.src='https://via.placeholder.com/150'">
+                <div class="teacher-info-multi">
+                    <span class="rank-text">دكتور الكيمياء</span>
+                    <h1 class="teacher-name">مستر فارس</h1>
+                    <p class="description-text">شرح كامل ومجاني تماماً على المنصة لوجه الله تعالى ❤️</p>
+                    <div class="social-links-overlap">
+                        <a href="https://wa.me/201001499397" target="_blank" class="whatsapp" title="واتساب"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://whatsapp.com/channel/0029VaygNoqLikg107YNdh0l" target="_blank" class="wa-channel" title="قناة الواتساب"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/share/12FsQ25HUQN/" target="_blank" class="facebook" title="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://youtube.com/@Chemist_ibrahem_Fares" target="_blank" class="youtube" title="يوتيوب"><i class="fab fa-youtube"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <main class="container">
-        <section class="chapters-container">
+    <main class="container content-wrapper">
+        <section class="chapters-grid-container">
             <h3 class="section-title">منهج الكيمياء للثانوية العامة</h3>
 
-            <details class="chapter-box">
-                <summary class="chapter-title">
-                    <div class="chapter-info">
-                        <i class="fas fa-atom chapter-icon"></i>
-                        <span>الباب الأول: العناصر الانتقالية</span>
-                    </div>
-                    <i class="fas fa-chevron-down arrow-icon"></i>
-                </summary>
-                <div class="chapter-content">
-                    <a href="https://youtu.be/hmhxP0MX2ww" target="_blank" class="lecture-item"><i class="fas fa-play-circle"></i> المحاضرة الأولى | العناصر الانتقالية واستخداماتها</a>
-                    <a href="https://youtu.be/OQShraGjnds" target="_blank" class="lecture-item"><i class="fas fa-play-circle"></i> المحاضره الثانية | التوزيع الالكتروني وحالات التأكسد</a>
-                    <a href="https://youtu.be/pkvvUuGPhao" target="_blank" class="lecture-item"><i class="fas fa-play-circle"></i> المحاضرة الثالثة | الخواص العامة لعناصر السلسلة الانتقالية الأولى</a>
-                    <a href="https://youtu.be/AMapAcB8bpc" target="_blank" class="lecture-item"><i class="fas fa-tasks"></i> ورشة حل على اول 3 دروس</a>
-                    <a href="https://youtu.be/IESH5EzYfwE" target="_blank" class="lecture-item"><i class="fas fa-play-circle"></i> المحاضرة الرابعة | الحديد</a>
-                    <a href="https://youtu.be/4uvWidz1F-Q" target="_blank" class="lecture-item"><i class="fas fa-play-circle"></i> المحاضرة الخامسه | السبائك وحل مشكلة جهد التاين والنشاط الحفزي</a>
-                    <a href="https://youtu.be/w4sWzYNAzTY" target="_blank" class="lecture-item"><i class="fas fa-play-circle"></i> المحاضرة السادسة | خواص الحديد و اكاسيد الحديد</a>
-                    <a href="https://youtu.be/qStTS5SMXT8" target="_blank" class="lecture-item"><i class="fas fa-tasks"></i> ورشة حل على الحديد واكاسيده</a>
-                </div>
-            </details>
+            <div class="chapters-grid" id="main-chapter-grid">
+                
+                <button class="chapter-card" data-chapter="ch1">
+                    <i class="fas fa-atom chapter-icon"></i>
+                    <h4 class="chapter-card-title">الباب الأول: العناصر الانتقالية</h4>
+                    <p class="chapter-card-desc">شرح كامل ومفصل لأهم عناصر السلسلة الأولى واستخداماتها، الحديد وسبائكه.</p>
+                </button>
 
-            <details class="chapter-box">
-                <summary class="chapter-title">
-                    <div class="chapter-info">
-                        <i class="fas fa-flask chapter-icon"></i>
-                        <span>الباب الثاني: الكيمياء التحليلية</span>
-                    </div>
-                    <i class="fas fa-chevron-down arrow-icon"></i>
-                </summary>
-                <div class="chapter-content">
-                    <a href="https://youtu.be/gItri-ydEUc" target="_blank" class="lecture-item"><i class="fas fa-play-circle"></i> المحاضرة الأولى | مقدمة التحليل الكيميائي ومجموعة HCl</a>
-                    <a href="https://youtu.be/kXqJ3FHoyAE" target="_blank" class="lecture-item"><i class="fas fa-play-circle"></i> المحاضره الثانية | مجموعة حمض الكبريتيتك وكلوريد الباريوم والكاتيونات</a>
-                    <a href="https://youtu.be/kVJPCCSnNWI" target="_blank" class="lecture-item"><i class="fas fa-play-circle"></i> المحاضرة الثالثة | المعايرة واسس الكيمياء الكمية</a>
-                    <a href="https://youtu.be/M8-ChLDpG-Q" target="_blank" class="lecture-item"><i class="fas fa-play-circle"></i> المحاضرة الرابعة | التحليل الكمي الكتلي بطريقة التطاير</a>
-                    <a href="https://youtu.be/VYa6dmKNOok" target="_blank" class="lecture-item"><i class="fas fa-play-circle"></i> المحاضرة الخامسه | التحليل الكمي الكتلي بطريقة الترسيب</a>
-                </div>
-            </details>
+                <button class="chapter-card" data-chapter="ch2">
+                    <i class="fas fa-flask chapter-icon"></i>
+                    <h4 class="chapter-card-title">الباب الثاني: الكيمياء التحليلية</h4>
+                    <p class="chapter-card-desc">كشف الكاتيونات والأنيونات، أساسيات المعايرة، وطرق التحليل الكمي.</p>
+                </button>
 
-            <details class="chapter-box">
-                <summary class="chapter-title">
-                    <div class="chapter-info">
-                        <i class="fas fa-balance-scale chapter-icon"></i>
-                        <span>الباب الثالث: الاتزان الكيميائي</span>
-                    </div>
-                    <i class="fas fa-chevron-down arrow-icon"></i>
-                </summary>
-                <div class="chapter-content">
-                    <a href="https://youtu.be/28Yh6r8upLM" target="_blank" class="lecture-item"><i class="fas fa-play-circle"></i> المحاضرة الأولى | مقدمة الاتزان الكيميائي</a>
-                    <a href="https://youtu.be/7GigQ8sxA90" target="_blank" class="lecture-item"><i class="fas fa-play-circle"></i> المحاضرة الثانية | العوامل المؤثرة على سرعة التفاعل واثر التركيز على الاتزان</a>
-                    <a href="https://youtu.be/bLBJpvy_k2s" target="_blank" class="lecture-item"><i class="fas fa-play-circle"></i> المحاضرة الثالثة | اثر الضغط والحرارة على الاتزان</a>
-                    <a href="https://youtu.be/CcrBdlnfBjA" target="_blank" class="lecture-item"><i class="fas fa-play-circle"></i> المحاضرة الرابعة | المحاليل الالكتروليتية وثابت اتزان الاحماض والقواعد الضعيفه</a>
-                    <a href="https://youtu.be/QjJxp86Wq4Y" target="_blank" class="lecture-item"><i class="fas fa-play-circle"></i> المحاضرة الخامسه | تاين الماء</a>
-                    <a href="https://youtu.be/Q17EqyT8Mj4" target="_blank" class="lecture-item"><i class="fas fa-play-circle"></i> المحاضرة السادسة | تآين الأملاح</a>
-                </div>
-            </details>
+                <button class="chapter-card" data-chapter="ch3">
+                    <i class="fas fa-balance-scale chapter-icon"></i>
+                    <h4 class="chapter-card-title">الباب الثالث: الاتزان الكيميائي</h4>
+                    <p class="chapter-card-desc">مقدمة الاتزان، العوامل المؤثرة على سرعة التفاعل، تأين الماء والملح.</p>
+                </button>
 
-            <details class="chapter-box">
-                <summary class="chapter-title">
-                    <div class="chapter-info">
-                        <i class="fas fa-bolt chapter-icon"></i>
-                        <span>الباب الرابع: الكيمياء الكهربية</span>
+                <button class="chapter-card" data-chapter="ch4">
+                    <i class="fas fa-bolt chapter-icon"></i>
+                    <h4 class="chapter-card-title">الباب الرابع: الكيمياء الكهربية</h4>
+                    <p class="chapter-card-desc">كيمياء كهربية وخلية دانيال، قطب الهيدروجين، الخلايا الجلفانية والتحليلية.</p>
+                </button>
+            </div>
+
+            <div class="lessons-panel-hidden" id="lessons-panel">
+                <button id="back-to-chapters" class="back-btn"><i class="fas fa-arrow-right"></i> عودة للأبواب</button>
+                <h4 id="current-chapter-title" class="lesson-chapter-title"></h4>
+                <div class="lessons-grid" id="lesson-item-grid">
                     </div>
-                    <i class="fas fa-chevron-down arrow-icon"></i>
-                </summary>
-                <div class="chapter-content">
-                    <a href="https://youtu.be/yiPd0yA6wfo" target="_blank" class="lecture-item"><i class="fas fa-play-circle"></i> المحاضرة الأولى | الكيمياء الكهربية وخلية دانيال</a>
-                    <a href="https://youtu.be/2K3R4C77LGo" target="_blank" class="lecture-item"><i class="fas fa-play-circle"></i> المحاضرة الثانية | قطب الهيدروجين القياسي ومتسلسلة الجهود</a>
-                    <a href="https://youtu.be/KyBwpP9Yxhw" target="_blank" class="lecture-item"><i class="fas fa-play-circle"></i> المحاضرة الثالثة | الخلايا الجلفانية</a>
-                    <a href="https://drive.google.com/file/d/1yCWfEOIdkVVxJkezZunVScAb-yKajNHT/view?usp=drivesdk" target="_blank" class="lecture-item pdf-item"><i class="fas fa-file-pdf"></i> الفصل الثاني الخلايا التحليلية (مذكرة PDF)</a>
-                </div>
-            </details>
+            </div>
 
         </section>
     </main>
 
     <footer>
-        <div class="container text-center">
-            <div class="dua-section">
-                <i class="fas fa-hands-praying"></i>
+        <div class="container text-center footer-content">
+            <div class="dua-section-card">
+                <i class="fas fa-hands-praying dua-icon"></i>
                 <p>نسألكم خالص الدعاء لي ولوالدي، وأن ييسر الله لي إنهاء فترة التجنيد (الجيش) على خير، والعودة إليكم في أسرع وقت.</p>
             </div>
             <p class="copyright">جميع الحقوق محفوظة © كيمستوري - د. فارس</p>
@@ -128,6 +89,7 @@
     </footer>
 
     <script>
+        // 1. كود الجمل التحفيزية اليومية
         const quotes = [
             "عافر، حلمك يستاهل التعب وربنا مش هيضيع مجهودك!",
             "وما توفيقي إلا بالله.. استمر في السعي ولا تيأس.",
@@ -137,9 +99,115 @@
             "النجاح هو مجموع مجهودات صغيرة تتكرر يومياً.",
             "أنت أقوى مما تتخيل، هانت يا بطل!"
         ];
-        // تغيير الجملة بناء على اليوم في الأسبوع
         const day = new Date().getDay();
         document.getElementById('daily-quote').innerText = quotes[day];
+
+        // 2. كود المحاضرات وبرمجة التنقل بين الأبواب والمحاضرات
+        const chapterData = {
+            ch1: {
+                title: "الباب الأول: العناصر الانتقالية",
+                icon: "atom",
+                lessons: [
+                    { title: "المحاضرة الأولى | العناصر الانتقالية واستخداماتها", link: "https://youtu.be/hmhxP0MX2ww", type: "video" },
+                    { title: "المحاضره الثانية | التوزيع الالكتروني وحالات التأكسد", link: "https://youtu.be/OQShraGjnds", type: "video" },
+                    { title: "المحاضرة الثالثة | الخواص العامة لعناصر السلسلة الانتقالية الأولى", link: "https://youtu.be/pkvvUuGPhao", type: "video" },
+                    { title: "ورشة حل على اول 3 دروس", link: "https://youtu.be/AMapAcB8bpc", type: "workshop" },
+                    { title: "المحاضرة الرابعة | الحديد", link: "https://youtu.be/IESH5EzYfwE", type: "video" },
+                    { title: "المحاضرة الخامسه | السبائك وحل مشكلة جهد التاين والنشاط الحفزي", link: "https://youtu.be/4uvWidz1F-Q", type: "video" },
+                    { title: "المحاضرة السادسة | خواص الحديد و أكاسيد الحديد", link: "https://youtu.be/w4sWzYNAzTY", type: "video" },
+                    { title: "ورشة حل على الحديد واكاسيده", link: "https://youtu.be/qStTS5SMXT8", type: "workshop" }
+                ]
+            },
+            ch2: {
+                title: "الباب الثاني: الكيمياء التحليلية",
+                icon: "flask",
+                lessons: [
+                    { title: "المحاضرة الأولى | مقدمة التحليل الكيميائي ومجموعة HCl", link: "https://youtu.be/gItri-ydEUc", type: "video" },
+                    { title: "المحاضره الثانية | مجموعة حمض الكبريتيتك وكلوريد الباريوم والكاتيونات", link: "https://youtu.be/kXqJ3FHoyAE", type: "video" },
+                    { title: "المحاضرة الثالثة | المعايرة واسس الكيمياء الكمية", link: "https://youtu.be/kVJPCCSnNWI", type: "video" },
+                    { title: "المحاضرة الرابعة | التحليل الكمي الكتلي بطريقة التطاير", link: "https://youtu.be/M8-ChLDpG-Q", type: "video" },
+                    { title: "المحاضرة الخامسه | التحليل الكمي الكتلي بطريقة الترسيب", link: "https://youtu.be/VYa6dmKNOok", type: "video" }
+                ]
+            },
+            ch3: {
+                title: "الباب الثالث: الاتزان الكيميائي",
+                icon: "balance-scale",
+                lessons: [
+                    { title: "المحاضرة الأولى | مقدمة الاتزان الكيميائي", link: "https://youtu.be/28Yh6r8upLM", type: "video" },
+                    { title: "المحاضرة الثانية | العوامل المؤثرة على سرعة التفاعل واثر التركيز على الاتزان", link: "https://youtu.be/7GigQ8sxA90", type: "video" },
+                    { title: "المحاضرة الثالثة | اثر الضغط والحرارة على الاتزان", link: "https://youtu.be/bLBJpvy_k2s", type: "video" },
+                    { title: "المحاضرة الرابعة | المحاليل الالكتروليتية وثابت اتزان الاحماض والقواعد الضعيفه", link: "https://youtu.be/CcrBdlnfBjA", type: "video" },
+                    { title: "المحاضرة الخامسه | تاين الماء", link: "https://youtu.be/QjJxp86Wq4Y", type: "video" },
+                    { title: "المحاضرة السادسة | تآين الأملاح", link: "https://youtu.be/Q17EqyT8Mj4", type: "video" }
+                ]
+            },
+            ch4: {
+                title: "الباب الرابع: الكيمياء الكهربية",
+                icon: "bolt",
+                lessons: [
+                    { title: "المحاضرة الأولى | الكيمياء الكهربية وخلية دانيال", link: "https://youtu.be/yiPd0yA6wfo", type: "video" },
+                    { title: "المحاضرة الثانية | قطب الهيدروجين القياسي ومتسلسلة الجهود", link: "https://youtu.be/2K3R4C77LGo", type: "video" },
+                    { title: "المحاضرة الثالثة | الخلايا الجلفانية", link: "https://youtu.be/KyBwpP9Yxhw", type: "video" },
+                    { title: "الفصل الثاني الخلايا التحليلية (PDF)", link: "https://drive.google.com/file/d/1yCWfEOIdkVVxJkezZunVScAb-yKajNHT/view?usp=drivesdk", type: "pdf" }
+                ]
+            }
+        };
+
+        const mainChapterGrid = document.getElementById('main-chapter-grid');
+        const lessonsPanel = document.getElementById('lessons-panel');
+        const lessonItemGrid = document.getElementById('lesson-item-grid');
+        const currentChapterTitle = document.getElementById('current-chapter-title');
+        const backBtn = document.getElementById('back-to-chapters');
+
+        // وظيفة لإظهار لوحة المحاضرات
+        function showLessons(chapterKey) {
+            const data = chapterData[chapterKey];
+            currentChapterTitle.innerText = data.title;
+            lessonItemGrid.innerHTML = ''; // تنظيف الشبكة
+
+            // إنشاء أيقونات المحاضرات
+            data.lessons.forEach(lesson => {
+                let iconHtml;
+                if (lesson.type === "workshop") {
+                    iconHtml = '<i class="fas fa-tasks workshop-icon"></i>';
+                } else if (lesson.type === "pdf") {
+                    iconHtml = '<i class="fas fa-file-pdf pdf-icon"></i>';
+                } else {
+                    iconHtml = '<i class="fas fa-play-circle video-icon"></i>';
+                }
+
+                const lessonCard = `
+                    <a href="${lesson.link}" target="_blank" class="lesson-card">
+                        ${iconHtml}
+                        <p class="lesson-card-title">${lesson.title}</p>
+                        <span class="lesson-card-link-icon"><i class="fas fa-external-link-alt"></i></span>
+                    </a>
+                `;
+                lessonItemGrid.insertAdjacentHTML('beforeend', lessonCard);
+            });
+
+            // تبديل العرض
+            mainChapterGrid.classList.add('fade-out');
+            lessonsPanel.classList.add('lessons-panel-visible');
+        }
+
+        // عودة للأبواب
+        function hideLessons() {
+            mainChapterGrid.classList.remove('fade-out');
+            lessonsPanel.classList.remove('lessons-panel-visible');
+        }
+
+        // تفعيل الأزرار
+        mainChapterGrid.addEventListener('click', (event) => {
+            const chapterCard = event.target.closest('.chapter-card');
+            if (chapterCard) {
+                const chapterKey = chapterCard.getAttribute('data-chapter');
+                showLessons(chapterKey);
+            }
+        });
+
+        backBtn.addEventListener('click', hideLessons);
+
     </script>
     <script src="app.js"></script>
 </body>
