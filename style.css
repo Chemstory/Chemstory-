@@ -1,12 +1,10 @@
-/* لوحة الألوان الجديدة */
+/* ألوان كيمستوري (الكحلي والأزرق الفاتح) */
 :root {
-    --primary-color: #4a0f8a; /* بنفسجي غامق */
-    --secondary-color: #f6f7fb; /* خلفية فاتحة */
-    --notification-bg: #ff2e7e; /* وردي غامق */
+    --primary-color: #09203f; /* كحلي اللوجو */
+    --secondary-color: #009ce4; /* أزرق اللوجو */
+    --bg-color: #f4f7f6;
     --text-color: #333;
     --card-bg: #ffffff;
-    --card-shadow: rgba(0,0,0,0.06);
-    --new-badge-color: #ff2e7e;
     --wa-color: #25D366;
     --fb-color: #1877F2;
     --yt-color: #FF0000;
@@ -20,48 +18,47 @@
 }
 
 body {
-    background-color: var(--secondary-color);
+    background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
 }
 
 .container {
     width: 95%;
-    max-width: 1200px;
+    max-width: 900px;
     margin: auto;
     padding: 10px;
 }
 
-/* شريط الإشعار العلوي الوردي المنحني (Pill shape) */
+/* شريط الإشعار العلوي (الجمل التحفيزية) */
 .notification-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: var(--notification-bg);
+    background: var(--secondary-color);
     color: white;
     padding: 12px 25px;
-    border-radius: 50px; /* شكل الحبة */
+    border-radius: 50px;
     margin: 15px auto;
-    width: fit-content;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 95%;
+    max-width: 600px;
+    box-shadow: 0 4px 10px rgba(0, 156, 228, 0.3);
     font-size: 0.95em;
+    font-weight: bold;
+    text-align: center;
 }
 
-.notification-bar .far {
-    font-size: 1.3em;
-}
-
-/* القسم العلوي (Hero) - الخلفية البنفسجية المضلعة */
+/* القسم العلوي (الخلفية الكحلي) */
 header {
     background: var(--primary-color);
-    background-image: linear-gradient(135deg, #5c149d, #3c0c77); /* تدرج بنفسجي */
-    background-image: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h20v20H0z" fill="%234a0f8a"/><path d="M0 0l20 20M20 0L0 20" stroke="%235a1a9e" stroke-width="0.5"/></svg>'); /* نقش مضلع خفيف */
+    background-image: linear-gradient(135deg, #09203f, #143b6e);
     color: white;
-    padding: 30px 0;
+    padding: 40px 0 60px 0;
     text-align: center;
-    border-radius: 0 0 40px 40px; /* حواف منحنية سفلية */
+    border-radius: 0 0 50px 50px;
     position: relative;
-    overflow: hidden;
+    margin-bottom: 50px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 .hero-content {
@@ -70,72 +67,58 @@ header {
     align-items: center;
 }
 
-.dark-mode-toggle {
-    position: absolute;
-    top: 15px;
-    right: 25px;
-    background: rgba(255,255,255,0.2);
-    border: none;
-    color: white;
-    font-size: 1.4em;
+.main-logo {
+    width: 100px;
+    background: white;
     padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
+    border-radius: 20px;
+    margin-bottom: 15px;
 }
 
 .header-main-text h1 {
-    font-size: 2.2em;
+    font-size: 2.5em;
     font-weight: 800;
+    color: var(--secondary-color);
 }
 
 .header-main-text h2 {
-    font-size: 1.3em;
+    font-size: 1.5em;
     font-weight: 500;
-}
-
-.heart-icon {
-    font-size: 1.8em;
-    color: var(--notification-bg);
-    margin: 10px 0;
+    margin-bottom: 10px;
 }
 
 .intro-text {
-    max-width: 800px;
-    font-size: 0.9em;
-    color: rgba(255,255,255,0.9);
+    max-width: 600px;
+    font-size: 0.95em;
+    color: rgba(255,255,255,0.85);
     margin: 15px 0;
+    line-height: 1.8;
 }
 
-.info-badges {
-    display: flex;
-    gap: 15px;
-    font-size: 0.8em;
-    color: rgba(255,255,255,0.7);
-    margin: 10px 0;
-}
-
-/* صورة المعلم وأزرار التواصل المتراكبة */
+/* صورة المعلم وأزرار التواصل */
 .teacher-profile {
+    position: absolute;
+    bottom: -60px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
-    margin-top: 20px;
 }
 
 .profile-img {
-    width: 140px;
-    height: 140px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
-    border: 5px solid rgba(255,255,255,0.3);
+    border: 5px solid white;
     object-fit: cover;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .social-links-overlap {
     display: flex;
-    gap: 10px;
-    position: absolute;
-    bottom: -15px; /* متراكب على الصورة */
+    gap: 12px;
+    margin-top: -20px;
+    z-index: 2;
 }
 
 .social-links-overlap a {
@@ -144,141 +127,153 @@ header {
     align-items: center;
     color: white;
     text-decoration: none;
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
 }
 
+.social-links-overlap a:hover { transform: translateY(-3px); }
 .social-links-overlap .whatsapp { background: var(--wa-color); }
 .social-links-overlap .wa-channel { background: var(--wa-color); }
 .social-links-overlap .facebook { background: var(--fb-color); }
 .social-links-overlap .youtube { background: var(--yt-color); }
 
-/* قسم شبكة المحاضرات */
-.lectures-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* شبكة مرنة */
-    gap: 15px;
-    padding: 20px 0;
+/* قسم الأبواب (Accordion) */
+.chapters-container {
+    padding-top: 20px;
 }
 
-.lectures-grid h3 {
-    grid-column: 1 / -1;
+.section-title {
     text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    font-size: 1.5em;
+}
+
+.chapter-box {
+    background: var(--card-bg);
+    margin-bottom: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.chapter-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1em;
+    color: var(--primary-color);
+    list-style: none; /* إخفاء سهم المتصفح الافتراضي */
+    background: white;
+    transition: background 0.3s;
+}
+
+.chapter-title::-webkit-details-marker {
+    display: none;
+}
+
+.chapter-title:hover {
+    background: #fdfdfd;
+}
+
+.chapter-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.chapter-icon {
+    background: #eef7ff;
+    color: var(--secondary-color);
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 1.2em;
+}
+
+.arrow-icon {
+    color: #aaa;
+    transition: transform 0.3s;
+}
+
+details[open] .arrow-icon {
+    transform: rotate(180deg);
+}
+
+.chapter-content {
+    padding: 10px 20px 20px;
+    border-top: 1px solid #eee;
+    background: #fafafa;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* روابط المحاضرات */
+.lecture-item {
+    display: block;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #444;
+    border-right: 4px solid var(--primary-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    transition: all 0.2s;
+    font-size: 0.95em;
+}
+
+.lecture-item i {
+    color: var(--yt-color);
+    margin-left: 8px;
+    font-size: 1.1em;
+}
+
+.lecture-item:hover {
+    transform: translateX(-5px);
+    background: #f1f9ff;
+    border-right-color: var(--secondary-color);
+}
+
+.pdf-item i {
+    color: #e2574c; /* لون أيقونة الـ PDF */
+}
+
+/* الفوتر والدعاء */
+footer {
+    background: #fff;
+    padding: 30px 0 20px;
+    margin-top: 40px;
+    border-top: 1px solid #ddd;
+}
+
+.dua-section {
+    background: #f9f9fa;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px dashed #ccc;
+    margin-bottom: 20px;
+    color: #555;
+    font-size: 0.95em;
+    line-height: 1.8;
+}
+
+.dua-section i {
+    font-size: 1.5em;
+    color: var(--primary-color);
     margin-bottom: 10px;
 }
 
-/* بطاقة المحاضرة (Card) - نظيفة وبيضاء */
-.lecture-card {
-    background: var(--card-bg);
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 6px var(--card-shadow);
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    border: 1px solid rgba(0,0,0,0.02); /* حد خفيف جداً */
-}
-
-.card-status-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    right: 15px;
-}
-
-.status-badge.new {
-    background: var(--new-badge-color);
-    color: white;
-    font-size: 0.7em;
-    padding: 3px 8px;
-    border-radius: 15px;
-}
-
-.check-box {
-    -webkit-appearance: none;
-    width: 18px;
-    height: 18px;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    cursor: pointer;
-    background: white;
-}
-
-.check-box:checked {
-    background: #4a0f8a;
-    border-color: #4a0f8a;
-    position: relative;
-}
-
-.check-box:checked::after {
-    content: '\f00c';
-    font-family: 'FontAwesome';
-    color: white;
-    font-size: 0.8em;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.card-body {
-    margin-top: 30px; /* مكان لخانة الاختيار */
-    text-align: right;
-}
-
-.lecture-card h4 {
-    font-size: 1.1em;
-    color: #444;
-}
-
-.lecture-description {
-    font-size: 0.8em;
-    color: #777;
-    margin: 5px 0;
-}
-
-.card-footer-btns {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 15px;
-}
-
-.view-btn {
-    display: inline-block;
-    background: #fdf2f7;
-    color: var(--notification-bg);
-    padding: 7px 12px;
-    text-decoration: none;
-    border-radius: 15px;
-    font-size: 0.8em;
-}
-
-.action-btns {
-    display: flex;
-    gap: 8px;
-    font-size: 1em;
-    color: #aaa;
-}
-
-/* الفوتر */
-footer {
-    background: #222;
-    color: rgba(255,255,255,0.6);
-    text-align: center;
-    padding: 15px 0;
-    margin-top: 20px;
-    font-size: 0.8em;
-}
-
-/* تعديلات للشاشات الكبيرة */
-@media (min-width: 768px) {
-    .lectures-grid {
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    }
+.copyright {
+    color: #888;
+    font-size: 0.85em;
 }
