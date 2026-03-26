@@ -3,16 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>كيمستوري | دكتور الكيمياء مستر فارس</title>
+    <title>كيمستوري | معسكر الإنقاذ مع مستر فارس</title>
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#09203f">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="كيمستوري">
-    <meta name="description" content="منصة كيمستوري - شرح مادة الكيمياء للثانوية العامة مع مستر فارس">
-    <link rel="apple-touch-icon" href="icon-192.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+    <meta name="description" content="منصة كيمستوري - معسكر الإنقاذ لمادة الكيمياء مع مستر فارس">
+    <link rel="icon" type="image/png" href="icon-192.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -29,22 +27,6 @@
         <p class="loader-text">كيمستوري</p>
     </div>
 
-    <div id="install-banner" class="install-banner hidden">
-        <div class="install-banner-content">
-            <div class="install-icon-wrap">
-                <i class="fas fa-mobile-alt"></i>
-            </div>
-            <div class="install-text">
-                <strong>حمّل التطبيق!</strong>
-                <span>استخدم المنصة بدون إنترنت</span>
-            </div>
-        </div>
-        <div class="install-actions">
-            <button id="install-btn" class="install-accept-btn">تثبيت</button>
-            <button id="install-dismiss" class="install-dismiss-btn"><i class="fas fa-times"></i></button>
-        </div>
-    </div>
-
     <div class="notification-bar">
         <i class="fas fa-fire quote-icon"></i>
         <span id="daily-quote" class="daily-quote-text">يتم تحميل حلمك..</span>
@@ -52,152 +34,92 @@
     </div>
 
     <header>
-        <div class="header-bg-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-            <div class="shape shape-3"></div>
-        </div>
         <div class="container hero-content">
-            <img src="logo.png" alt="كيمستوري لوجو" class="main-logo-small" onerror="this.style.display='none'">
-
+            <img src="logo.png" alt="لوجو" class="main-logo-small" onerror="this.style.display='none'">
             <div class="teacher-profile-card">
                 <div class="profile-img-wrapper">
                     <img src="profile.jpg" alt="مستر فارس" class="profile-img-show" onerror="this.src='https://ui-avatars.com/api/?name=Fares&background=009ce4&color=fff&size=150&bold=true'">
-                    <div class="profile-ring"></div>
                 </div>
                 <div class="teacher-info-multi">
-                    <span class="rank-badge">
-                        <i class="fas fa-certificate"></i>
-                        دكتور الكيمياء
-                    </span>
+                    <span class="rank-badge"><i class="fas fa-certificate"></i> دكتور الكيمياء</span>
                     <h1 class="teacher-name">مستر فارس</h1>
-                    <span class="description-text">
-                        <i class="fas fa-heart heart-icon"></i>
-                        شرح كامل ومجاني تماماً لوجه الله تعالى
-                    </span>
+                    <span class="description-text">شرح كامل ومجاني لوجه الله تعالى</span>
                     <div class="social-links-overlap">
-                        <a href="https://wa.me/201001499397" target="_blank" class="social-btn whatsapp" title="واتساب">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                        <a href="https://whatsapp.com/channel/0029VaygNoqLikg107YNdh0l" target="_blank" class="social-btn wa-channel" title="قناة الواتساب">
-                            <i class="fab fa-whatsapp"></i>
-                            <span class="social-label">القناة</span>
-                        </a>
-                        <a href="https://www.facebook.com/share/12FsQ25HUQN/" target="_blank" class="social-btn facebook" title="فيسبوك">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="https://youtube.com/@Chemist_ibrahem_Fares" target="_blank" class="social-btn youtube" title="يوتيوب">
-                            <i class="fab fa-youtube"></i>
-                        </a>
+                        <a href="https://wa.me/201001499397" target="_blank" class="social-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/share/12FsQ25HUQN/" target="_blank" class="social-btn facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://youtube.com/@Chemist_ibrahem_Fares" target="_blank" class="social-btn youtube"><i class="fab fa-youtube"></i></a>
                     </div>
-                </div>
-            </div>
-
-            <div class="stats-row">
-                <div class="stat-item">
-                    <span class="stat-number">4</span>
-                    <span class="stat-label">أبواب</span>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <span class="stat-number">23+</span>
-                    <span class="stat-label">محاضرة</span>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label">مجاناً</span>
                 </div>
             </div>
         </div>
     </header>
 
     <main class="container content-wrapper">
+
+        <section class="backlog-container" id="backlog-section">
+            <div class="backlog-header">
+                <h2 class="backlog-title">
+                    <i class="fas fa-fire-alt fire-icon"></i>
+                    معسكر الإنقاذ - لم المتراكم
+                </h2>
+                <p class="backlog-subtitle">خطة إنقاذ من ٢٨ مارس لـ ٢٠ مايو 💪</p>
+            </div>
+
+            <div class="progress-dashboard">
+                <div class="progress-meta">
+                    <span class="progress-label">مستوى إنجازك يا بطل:</span>
+                    <span id="progress-percent" class="progress-percent">0%</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div id="progress-bar-fill" class="progress-bar-fill"></div>
+                </div>
+                <p id="status-message" class="status-message">بداية موفقة يا بطل.. الحلم بيتحقق خطوة خطوة!</p>
+            </div>
+
+            <div class="backlog-table" id="backlog-table-body">
+                </div>
+        </section>
+
         <section class="chapters-grid-container" id="chapters-section">
             <div class="section-header">
-                <h3 class="section-title">
-                    <span class="title-accent"></span>
-                    منهج الكيمياء للثانوية العامة
-                </h3>
-                <p class="section-subtitle">اختر الباب اللي عاوز تذاكره</p>
+                <h3 class="section-title"><span class="title-accent"></span>منهج الكيمياء</h3>
+                <p class="section-subtitle">اختر الباب لبدء المذاكرة</p>
             </div>
 
             <div class="chapters-grid" id="main-chapter-grid">
-                <button class="chapter-card" data-chapter="ch1" style="--card-color: #009ce4; --delay: 0.1s">
+                <button class="chapter-card" data-chapter="ch1" style="--card-color: #009ce4;">
                     <div class="chapter-card-inner">
-                        <div class="chapter-number">01</div>
-                        <div class="chapter-icon-wrap">
-                            <i class="fas fa-atom chapter-icon"></i>
-                        </div>
-                        <div class="chapter-info">
-                            <h4 class="chapter-card-title">العناصر الانتقالية</h4>
-                            <p class="chapter-card-desc">السلسلة الأولى، الحديد وسبائكه، حالات التأكسد</p>
-                        </div>
-                        <div class="chapter-meta">
-                            <span class="lesson-count"><i class="fas fa-play-circle"></i> 8 دروس</span>
-                            <i class="fas fa-arrow-left chapter-arrow"></i>
-                        </div>
+                        <div class="chapter-icon-wrap"><i class="fas fa-atom chapter-icon"></i></div>
+                        <h4 class="chapter-card-title">العناصر الانتقالية</h4>
+                        <span class="lesson-count">8 دروس</span>
                     </div>
                 </button>
-
-                <button class="chapter-card" data-chapter="ch2" style="--card-color: #7c3aed; --delay: 0.2s">
+                <button class="chapter-card" data-chapter="ch2" style="--card-color: #7c3aed;">
                     <div class="chapter-card-inner">
-                        <div class="chapter-number">02</div>
-                        <div class="chapter-icon-wrap">
-                            <i class="fas fa-flask chapter-icon"></i>
-                        </div>
-                        <div class="chapter-info">
-                            <h4 class="chapter-card-title">الكيمياء التحليلية</h4>
-                            <p class="chapter-card-desc">الكاتيونات، الأنيونات، المعايرة، التحليل الكمي</p>
-                        </div>
-                        <div class="chapter-meta">
-                            <span class="lesson-count"><i class="fas fa-play-circle"></i> 5 دروس</span>
-                            <i class="fas fa-arrow-left chapter-arrow"></i>
-                        </div>
+                        <div class="chapter-icon-wrap"><i class="fas fa-flask chapter-icon"></i></div>
+                        <h4 class="chapter-card-title">الكيمياء التحليلية</h4>
+                        <span class="lesson-count">5 دروس</span>
                     </div>
                 </button>
-
-                <button class="chapter-card" data-chapter="ch3" style="--card-color: #059669; --delay: 0.3s">
+                <button class="chapter-card" data-chapter="ch3" style="--card-color: #059669;">
                     <div class="chapter-card-inner">
-                        <div class="chapter-number">03</div>
-                        <div class="chapter-icon-wrap">
-                            <i class="fas fa-balance-scale chapter-icon"></i>
-                        </div>
-                        <div class="chapter-info">
-                            <h4 class="chapter-card-title">الاتزان الكيميائي</h4>
-                            <p class="chapter-card-desc">العوامل المؤثرة، تأين الماء والأملاح</p>
-                        </div>
-                        <div class="chapter-meta">
-                            <span class="lesson-count"><i class="fas fa-play-circle"></i> 6 دروس</span>
-                            <i class="fas fa-arrow-left chapter-arrow"></i>
-                        </div>
+                        <div class="chapter-icon-wrap"><i class="fas fa-balance-scale chapter-icon"></i></div>
+                        <h4 class="chapter-card-title">الاتزان الكيميائي</h4>
+                        <span class="lesson-count">6 دروس</span>
                     </div>
                 </button>
-
-                <button class="chapter-card" data-chapter="ch4" style="--card-color: #dc2626; --delay: 0.4s">
+                <button class="chapter-card" data-chapter="ch4" style="--card-color: #dc2626;">
                     <div class="chapter-card-inner">
-                        <div class="chapter-number">04</div>
-                        <div class="chapter-icon-wrap">
-                            <i class="fas fa-bolt chapter-icon"></i>
-                        </div>
-                        <div class="chapter-info">
-                            <h4 class="chapter-card-title">الكيمياء الكهربية</h4>
-                            <p class="chapter-card-desc">خلية دانيال، قطب الهيدروجين، الخلايا الجلفانية</p>
-                        </div>
-                        <div class="chapter-meta">
-                            <span class="lesson-count"><i class="fas fa-play-circle"></i> 4 دروس</span>
-                            <i class="fas fa-arrow-left chapter-arrow"></i>
-                        </div>
+                        <div class="chapter-icon-wrap"><i class="fas fa-bolt chapter-icon"></i></div>
+                        <h4 class="chapter-card-title">الكيمياء الكهربية</h4>
+                        <span class="lesson-count">4 دروس</span>
                     </div>
                 </button>
             </div>
 
             <div class="lessons-panel" id="lessons-panel">
                 <div class="lessons-header">
-                    <button id="back-to-chapters" class="back-btn">
-                        <i class="fas fa-arrow-right"></i>
-                        <span>الأبواب</span>
-                    </button>
+                    <button id="back-to-chapters" class="back-btn"><i class="fas fa-arrow-right"></i><span>الأبواب</span></button>
                     <h4 id="current-chapter-title" class="lesson-chapter-title"></h4>
                 </div>
                 <div class="lessons-grid" id="lesson-item-grid"></div>
@@ -208,152 +130,16 @@
     <footer>
         <div class="container footer-inner">
             <div class="dua-section-card">
-                <div class="dua-icon-wrap">
-                    <i class="fas fa-hands-praying"></i>
-                </div>
+                <div class="dua-icon-wrap"><i class="fas fa-hands-praying"></i></div>
                 <p>نسألكم خالص الدعاء لي ولوالدي، وأن ييسر الله لي إنهاء فترة التجنيد على خير والعودة إليكم في أسرع وقت.</p>
             </div>
             <div class="footer-bottom">
-                <img src="logo.png" alt="كيمستوري" class="footer-logo" onerror="this.style.display='none'">
                 <p class="copyright">جميع الحقوق محفوظة © كيمستوري - د. فارس ٢٠٢٥</p>
             </div>
         </div>
     </footer>
 
     <script src="app.js"></script>
-    <script>
-        // ===== بيانات الأبواب والمحاضرات =====
-        const chapterData = {
-            ch1: {
-                title: "الباب الأول: العناصر الانتقالية",
-                color: "#009ce4",
-                lessons: [
-                    { title: "المحاضرة الأولى | العناصر الانتقالية واستخداماتها", link: "https://youtu.be/hmhxP0MX2ww", type: "video" },
-                    { title: "المحاضرة الثانية | التوزيع الإلكتروني وحالات التأكسد", link: "https://youtu.be/OQShraGjnds", type: "video" },
-                    { title: "المحاضرة الثالثة | الخواص العامة لعناصر السلسلة الانتقالية الأولى", link: "https://youtu.be/pkvvUuGPhao", type: "video" },
-                    { title: "ورشة حل على أول 3 دروس", link: "https://youtu.be/AMapAcB8bpc", type: "workshop" },
-                    { title: "المحاضرة الرابعة | الحديد", link: "https://youtu.be/IESH5EzYfwE", type: "video" },
-                    { title: "المحاضرة الخامسة | السبائك وجهد التأين والنشاط الحفزي", link: "https://youtu.be/4uvWidz1F-Q", type: "video" },
-                    { title: "المحاضرة السادسة | خواص الحديد وأكاسيد الحديد", link: "https://youtu.be/w4sWzYNAzTY", type: "video" },
-                    { title: "ورشة حل على الحديد وأكاسيده", link: "https://youtu.be/qStTS5SMXT8", type: "workshop" }
-                ]
-            },
-            ch2: {
-                title: "الباب الثاني: الكيمياء التحليلية",
-                color: "#7c3aed",
-                lessons: [
-                    { title: "المحاضرة الأولى | مقدمة التحليل الكيميائي ومجموعة HCl", link: "https://youtu.be/gItri-ydEUc", type: "video" },
-                    { title: "المحاضرة الثانية | مجموعة حمض الكبريتيك والكاتيونات", link: "https://youtu.be/kXqJ3FHoyAE", type: "video" },
-                    { title: "المحاضرة الثالثة | المعايرة وأسس الكيمياء الكمية", link: "https://youtu.be/kVJPCCSnNWI", type: "video" },
-                    { title: "المحاضرة الرابعة | التحليل الكمي الكتلي بطريقة التطاير", link: "https://youtu.be/M8-ChLDpG-Q", type: "video" },
-                    { title: "المحاضرة الخامسة | التحليل الكمي الكتلي بطريقة الترسيب", link: "https://youtu.be/VYa6dmKNOok", type: "video" }
-                ]
-            },
-            ch3: {
-                title: "الباب الثالث: الاتزان الكيميائي",
-                color: "#059669",
-                lessons: [
-                    { title: "المحاضرة الأولى | مقدمة الاتزان الكيميائي", link: "https://youtu.be/28Yh6r8upLM", type: "video" },
-                    { title: "المحاضرة الثانية | العوامل المؤثرة على سرعة التفاعل وأثر التركيز", link: "https://youtu.be/7GigQ8sxA90", type: "video" },
-                    { title: "المحاضرة الثالثة | أثر الضغط والحرارة على الاتزان", link: "https://youtu.be/bLBJpvy_k2s", type: "video" },
-                    { title: "المحاضرة الرابعة | المحاليل الإلكتروليتية وثابت اتزان الأحماض", link: "https://youtu.be/CcrBdlnfBjA", type: "video" },
-                    { title: "المحاضرة الخامسة | تأين الماء", link: "https://youtu.be/QjJxp86Wq4Y", type: "video" },
-                    { title: "المحاضرة السادسة | تأين الأملاح", link: "https://youtu.be/Q17EqyT8Mj4", type: "video" }
-                ]
-            },
-            ch4: {
-                title: "الباب الرابع: الكيمياء الكهربية",
-                color: "#dc2626",
-                lessons: [
-                    { title: "المحاضرة الأولى | الكيمياء الكهربية وخلية دانيال", link: "https://youtu.be/yiPd0yA6wfo", type: "video" },
-                    { title: "المحاضرة الثانية | قطب الهيدروجين القياسي ومتسلسلة الجهود", link: "https://youtu.be/2K3R4C77LGo", type: "video" },
-                    { title: "المحاضرة الثالثة | الخلايا الجلفانية", link: "https://youtu.be/KyBwpP9Yxhw", type: "video" },
-                    { title: "الفصل الثاني | الخلايا التحليلية (PDF)", link: "https://drive.google.com/file/d/1yCWfEOIdkVVxJkezZunVScAb-yKajNHT/view?usp=drivesdk", type: "pdf" }
-                ]
-            }
-        };
-
-        // ===== الجمل التحفيزية =====
-        const quotes = [
-            "عافر.. حلمك يستاهل التعب وربنا مش هيضيع مجهودك! 💪",
-            "وما توفيقي إلا بالله.. استمر في السعي ولا تيأس 🤲",
-            "الكيمياء ممتعة، محتاجة بس تركيز وفهم وهتقفلها إن شاء الله ⚗️",
-            "كل مجهود بتبذله النهاردة، هتحصد نتيجته نجاح بكرة 🌟",
-            "لا تتوقف حتى تفخر بنفسك، أنت بطل حكايتك 🏆",
-            "النجاح هو مجموع مجهودات صغيرة تتكرر يومياً 🔥",
-            "أنت أقوى مما تتخيل، هانت يا بطل! 💎"
-        ];
-        const day = new Date().getDay();
-        document.getElementById('daily-quote').innerText = quotes[day];
-
-        // ===== منطق التنقل =====
-        const mainChapterGrid = document.getElementById('main-chapter-grid');
-        const lessonsPanel = document.getElementById('lessons-panel');
-        const lessonItemGrid = document.getElementById('lesson-item-grid');
-        const currentChapterTitle = document.getElementById('current-chapter-title');
-        const backBtn = document.getElementById('back-to-chapters');
-        const sectionEl = document.getElementById('chapters-section');
-
-        function showLessons(chapterKey) {
-            const data = chapterData[chapterKey];
-            currentChapterTitle.innerText = data.title;
-            currentChapterTitle.style.setProperty('--chapter-color', data.color);
-            lessonItemGrid.innerHTML = '';
-
-            data.lessons.forEach((lesson, index) => {
-                let iconClass, typeClass, typeLabel;
-                if (lesson.type === "workshop") {
-                    iconClass = "fas fa-tasks"; typeClass = "workshop"; typeLabel = "ورشة";
-                } else if (lesson.type === "pdf") {
-                    iconClass = "fas fa-file-pdf"; typeClass = "pdf"; typeLabel = "PDF";
-                } else {
-                    iconClass = "fas fa-play-circle"; typeClass = "video"; typeLabel = "فيديو";
-                }
-
-                const card = document.createElement('a');
-                card.href = lesson.link;
-                card.target = "_blank";
-                card.rel = "noopener noreferrer";
-                card.className = `lesson-card lesson-card--${typeClass}`;
-                card.style.animationDelay = `${index * 0.07}s`;
-                card.innerHTML = `
-                    <div class="lesson-icon-wrap">
-                        <i class="${iconClass}"></i>
-                    </div>
-                    <div class="lesson-content">
-                        <p class="lesson-card-title">${lesson.title}</p>
-                        <span class="lesson-type-badge lesson-type-badge--${typeClass}">${typeLabel}</span>
-                    </div>
-                `;
-                lessonItemGrid.appendChild(card);
-            });
-
-            mainChapterGrid.classList.add('hidden-grid');
-            lessonsPanel.classList.add('visible');
-            sectionEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-
-        function hideLessons() {
-            lessonsPanel.classList.remove('visible');
-            mainChapterGrid.classList.remove('hidden-grid');
-            sectionEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-
-        mainChapterGrid.addEventListener('click', (e) => {
-            const card = e.target.closest('.chapter-card');
-            if (card) showLessons(card.dataset.chapter);
-        });
-
-        backBtn.addEventListener('click', hideLessons);
-
-        // ===== إخفاء اللودر =====
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                const loader = document.getElementById('page-loader');
-                loader.classList.add('fade-out');
-                setTimeout(() => loader.remove(), 600);
-            }, 800);
-        });
-    </script>
 </body>
 </html>
+
