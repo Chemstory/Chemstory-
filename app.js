@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ch4: { title: "الباب الرابع: الكيمياء الكهربية", color: "#dc2626", lessons: [ { title: "المحاضرة الأولى | الكيمياء الكهربية و خلية دانيال", link: "https://youtu.be/yiPd0yA6wfo", type: "video" }, { title: "المحاضرة الثانية | قطب الهيدروجين القياسي والمتسلسلة الجهود", link: "https://youtu.be/2K3R4C77LGo", type: "video" }, { title: "المحاضرة الثالثة | الخلايا الجلفانية", link: "https://youtu.be/KyBwpP9Yxhw", type: "video" }, { title: "الفصل الثاني | الخلايا التحليلية (PDF)", link: "https://drive.google.com/file/d/1yCWfEOIdkVVxJkezZunVScAb-yKajNHT/view?usp=drivesdk", type: "pdf" } ] }
     };
 
-    // ===== 2. بيانات المعسكر (تُعرض في صفحة camp.html فقط) =====
+    // ===== 2. بيانات المعسكر كاملة (تُعرض في صفحة camp.html فقط) =====
     const backlogSchedule = [
         { id: "d1", dateAr: "٢٨ / ٣", dayAr: "السبت", chapterName: "الباب الأول", lecture: chapterData.ch1.lessons[0] },
         { id: "d2", dateAr: "٣٠ / ٣", dayAr: "الإثنين", chapterName: "الباب الأول", lecture: chapterData.ch1.lessons[1] },
@@ -23,7 +23,20 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: "d7", dateAr: "١١ / ٤", dayAr: "السبت", chapterName: "الباب الأول", lecture: chapterData.ch1.lessons[6] },
         { id: "d8", dateAr: "١٣ / ٤", dayAr: "الإثنين", chapterName: "مراجعة 2", lecture: chapterData.ch1.lessons[7] },
         { id: "d9", dateAr: "١٥ / ٤", dayAr: "الأربعاء", chapterName: "الباب الثاني", lecture: chapterData.ch2.lessons[0] },
-        { id: "d10", dateAr: "١٨ / ٤", dayAr: "السبت", chapterName: "الباب الثاني", lecture: chapterData.ch2.lessons[1] }
+        { id: "d10", dateAr: "١٨ / ٤", dayAr: "السبت", chapterName: "الباب الثاني", lecture: chapterData.ch2.lessons[1] },
+        { id: "d11", dateAr: "٢٠ / ٤", dayAr: "الإثنين", chapterName: "الباب الثاني", lecture: chapterData.ch2.lessons[2] },
+        { id: "d12", dateAr: "٢٢ / ٤", dayAr: "الأربعاء", chapterName: "الباب الثاني", lecture: chapterData.ch2.lessons[3] },
+        { id: "d13", dateAr: "٢٥ / ٤", dayAr: "السبت", chapterName: "الباب الثاني", lecture: chapterData.ch2.lessons[4] },
+        { id: "d14", dateAr: "٢٧ / ٤", dayAr: "الإثنين", chapterName: "الباب الثالث", lecture: chapterData.ch3.lessons[0] },
+        { id: "d15", dateAr: "٢٩ / ٤", dayAr: "الأربعاء", chapterName: "الباب الثالث", lecture: chapterData.ch3.lessons[1] },
+        { id: "d16", dateAr: "٢ / ٥", dayAr: "السبت", chapterName: "الباب الثالث", lecture: chapterData.ch3.lessons[2] },
+        { id: "d17", dateAr: "٤ / ٥", dayAr: "الإثنين", chapterName: "الباب الثالث", lecture: chapterData.ch3.lessons[3] },
+        { id: "d18", dateAr: "٦ / ٥", dayAr: "الأربعاء", chapterName: "الباب الثالث", lecture: chapterData.ch3.lessons[4] },
+        { id: "d19", dateAr: "٩ / ٥", dayAr: "السبت", chapterName: "الباب الثالث", lecture: chapterData.ch3.lessons[5] },
+        { id: "d20", dateAr: "١١ / ٥", dayAr: "الإثنين", chapterName: "الباب الرابع", lecture: chapterData.ch4.lessons[0] },
+        { id: "d21", dateAr: "١٣ / ٥", dayAr: "الأربعاء", chapterName: "الباب الرابع", lecture: chapterData.ch4.lessons[1] },
+        { id: "d22", dateAr: "١٦ / ٥", dayAr: "السبت", chapterName: "الباب الرابع", lecture: chapterData.ch4.lessons[2] },
+        { id: "d23", dateAr: "٢٠ / ٥", dayAr: "الأربعاء", chapterName: "النهاية 🏆", lecture: chapterData.ch4.lessons[3] }
     ];
 
     // ===== الجمل التحفيزية =====
@@ -154,3 +167,4 @@ document.addEventListener('DOMContentLoaded', () => {
         updateProgressVisuals();
     }
 });
+
