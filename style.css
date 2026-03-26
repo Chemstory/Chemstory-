@@ -1,5 +1,5 @@
 /* ============================================
-   كيمستوري - ستايل شيت احترافي
+   كيمستوري - ستايل شيت احترافي (نسخة المعسكر)
    Cairo + Tajawal fonts | RTL Layout
    ============================================ */
 
@@ -11,15 +11,15 @@
     --sky: #009ce4;
     --sky-light: #e8f6fd;
     --pink: #ff2e7e;
+    --success: #2ecc71; /* لون جديد للعلامة صح والتقدم */
+    --warning: #f1c40f; /* لون جديد للتنبيه */
     --bg: #f0f4f8;
     --white: #ffffff;
     --card-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    --hero-shadow: 0 10px 30px rgba(0,156,228,0.2);
     --text: #1a2332;
     --muted: #6b7280;
     --radius: 18px;
-    --wa: #25D366;
-    --fb: #1877F2;
-    --yt: #FF0000;
 }
 
 *, *::before, *::after {
@@ -61,118 +61,14 @@ body {
     opacity: 0;
     visibility: hidden;
 }
-
-.loader-atom {
-    position: relative;
-    width: 80px;
-    height: 80px;
-    margin-bottom: 16px;
-}
-.nucleus {
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    width: 16px; height: 16px;
-    background: var(--sky);
-    border-radius: 50%;
-    box-shadow: 0 0 20px var(--sky);
-}
-.orbit {
-    position: absolute;
-    top: 50%; left: 50%;
-    border: 1.5px solid rgba(0,156,228,0.4);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-}
+.loader-atom { position: relative; width: 80px; height: 80px; margin-bottom: 16px; }
+.nucleus { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 16px; height: 16px; background: var(--sky); border-radius: 50%; box-shadow: 0 0 20px var(--sky); }
+.orbit { position: absolute; top: 50%; left: 50%; border: 1.5px solid rgba(0,156,228,0.4); border-radius: 50%; transform: translate(-50%, -50%); }
 .orbit-1 { width: 40px; height: 40px; animation: spin 1.2s linear infinite; }
 .orbit-2 { width: 60px; height: 60px; animation: spin 1.8s linear infinite reverse; }
 .orbit-3 { width: 80px; height: 80px; animation: spin 2.4s linear infinite; }
-
-.electron {
-    position: absolute;
-    top: -4px; left: 50%;
-    transform: translateX(-50%);
-    width: 7px; height: 7px;
-    background: var(--sky);
-    border-radius: 50%;
-    box-shadow: 0 0 8px var(--sky);
-}
-
-@keyframes spin {
-    from { transform: translate(-50%, -50%) rotate(0deg); }
-    to   { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-.loader-text {
-    color: white;
-    font-size: 1.4em;
-    font-weight: 700;
-    letter-spacing: 2px;
-}
-
-/* ============ INSTALL BANNER ============ */
-.install-banner {
-    position: fixed;
-    bottom: 16px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--navy);
-    color: white;
-    border-radius: 16px;
-    padding: 14px 18px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    width: calc(100% - 32px);
-    max-width: 420px;
-    z-index: 1000;
-    box-shadow: 0 8px 30px rgba(9,32,63,0.4);
-    border: 1px solid rgba(0,156,228,0.3);
-    animation: slideUp 0.4s ease;
-}
-.install-banner.hidden { display: none; }
-
-@keyframes slideUp {
-    from { transform: translateX(-50%) translateY(100%); opacity: 0; }
-    to   { transform: translateX(-50%) translateY(0); opacity: 1; }
-}
-
-.install-banner-content { display: flex; align-items: center; gap: 12px; flex: 1; }
-.install-icon-wrap {
-    width: 42px; height: 42px;
-    background: rgba(0,156,228,0.2);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2em;
-    color: var(--sky);
-}
-.install-text { display: flex; flex-direction: column; }
-.install-text strong { font-size: 0.95em; }
-.install-text span { font-size: 0.78em; opacity: 0.7; }
-
-.install-actions { display: flex; align-items: center; gap: 8px; }
-.install-accept-btn {
-    background: var(--sky);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 8px 16px;
-    font-family: 'Cairo', sans-serif;
-    font-weight: 700;
-    font-size: 0.88em;
-    cursor: pointer;
-}
-.install-dismiss-btn {
-    background: transparent;
-    border: none;
-    color: rgba(255,255,255,0.5);
-    cursor: pointer;
-    font-size: 1em;
-    padding: 4px;
-}
+@keyframes spin { from { transform: translate(-50%, -50%) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(360deg); } }
+.loader-text { color: white; font-size: 1.4em; font-weight: 700; letter-spacing: 2px; }
 
 /* ============ NOTIFICATION BAR ============ */
 .notification-bar {
@@ -192,8 +88,6 @@ body {
     font-weight: 600;
     text-align: center;
 }
-.quote-icon { font-size: 1em; opacity: 0.9; }
-.daily-quote-text { flex: 1; }
 
 /* ============ HEADER ============ */
 header {
@@ -203,342 +97,207 @@ header {
     border-radius: 0 0 40px 40px;
     position: relative;
     overflow: hidden;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
+.hero-content { display: flex; flex-direction: column; align-items: center; position: relative; z-index: 1; }
+.main-logo-small { width: 35px; position: absolute; top: 15px; right: 15px; background: white; padding: 6px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+.teacher-profile-card { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; margin-top: 10px; }
+.profile-img-show { width: 120px; height: 120px; border-radius: 50%; border: 4px solid white; object-fit: cover; object-position: center top; display: block; position: relative; z-index: 1; }
+.rank-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(0,156,228,0.2); color: #60c8f0; padding: 4px 12px; border-radius: 20px; font-size: 0.82em; font-weight: 700; border: 1px solid rgba(0,156,228,0.3); }
+.teacher-name { font-size: 2.1em; font-weight: 900; color: white; font-family: 'Tajawal', sans-serif; }
+.description-text { font-size: 0.88em; color: rgba(255,255,255,0.75); display: block; margin-top: 5px; }
+.social-links-overlap { display: flex; gap: 8px; margin-top: 6px; justify-content: center; }
+.social-btn { display: inline-flex; align-items: center; justify-content: center; color: white; text-decoration: none; height: 36px; width: 36px; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.25); }
+.whatsapp { background: #25D366; } .facebook { background: #1877F2; } .youtube { background: #FF0000; }
 
-.header-bg-shapes {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    overflow: hidden;
-}
-.shape { position: absolute; border-radius: 50%; background: var(--sky); }
-.shape-1 { width: 300px; height: 300px; top: -100px; left: -80px; opacity: 0.07; }
-.shape-2 { width: 200px; height: 200px; top: 50px; right: -60px; opacity: 0.05; }
-.shape-3 { width: 150px; height: 150px; bottom: -50px; left: 40%; opacity: 0.06; }
-
-.hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-}
-
-.main-logo-small {
-    width: 35px;
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: white;
-    padding: 6px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
-.teacher-profile-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 12px;
-    margin-top: 10px;
-}
-
-.profile-img-wrapper { position: relative; }
-.profile-img-show {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 4px solid white;
-    object-fit: cover;
-    object-position: center top;
-    display: block;
-    position: relative;
-    z-index: 1;
-}
-.profile-ring {
-    position: absolute;
-    inset: -8px;
-    border-radius: 50%;
-    border: 2px dashed rgba(0,156,228,0.5);
-    animation: rotateDash 8s linear infinite;
-}
-@keyframes rotateDash {
-    from { transform: rotate(0deg); }
-    to   { transform: rotate(360deg); }
-}
-
-.teacher-info-multi {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-}
-
-.rank-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: rgba(0,156,228,0.2);
-    color: #60c8f0;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.82em;
-    font-weight: 700;
-    border: 1px solid rgba(0,156,228,0.3);
-}
-
-.teacher-name {
-    font-size: 2.1em;
-    font-weight: 900;
-    color: white;
-    line-height: 1.1;
-    font-family: 'Tajawal', sans-serif;
-}
-
-.description-text {
-    font-size: 0.88em;
-    color: rgba(255,255,255,0.75);
-    display: block;
-    margin-top: 5px;
-}
-.heart-icon { color: #ff6b8a; }
-
-.social-links-overlap {
-    display: flex;
-    gap: 8px;
-    margin-top: 6px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-.social-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    color: white;
-    text-decoration: none;
-    height: 36px;
-    min-width: 36px;
-    padding: 0 10px;
-    border-radius: 10px;
-    font-size: 0.9em;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.25);
-}
-.whatsapp { background: var(--wa); }
-.wa-channel { background: #128c5e; }
-.facebook { background: var(--fb); }
-.youtube { background: var(--yt); }
-
-.stats-row {
-    display: flex;
-    align-items: center;
-    gap: 0;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 14px;
-    padding: 12px 24px;
-    margin-top: 24px;
-    backdrop-filter: blur(10px);
-}
-.stat-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1;
-}
-.stat-number { font-size: 1.5em; font-weight: 900; color: var(--sky); line-height: 1; }
-.stat-label { font-size: 0.75em; color: rgba(255,255,255,0.6); margin-top: 3px; }
-.stat-divider { width: 1px; height: 35px; background: rgba(255,255,255,0.15); }
-
-/* ============ MAIN CONTENT ============ */
-.content-wrapper { padding-bottom: 50px; }
-.chapters-grid-container { margin-top: 10px; }
-.section-header { text-align: center; margin-bottom: 28px; }
-.section-title {
-    font-size: 1.45em;
-    font-weight: 800;
-    color: var(--navy);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-.title-accent {
-    display: inline-block;
-    width: 4px; height: 24px;
-    background: linear-gradient(to bottom, var(--sky), var(--pink));
-    border-radius: 2px;
-}
-.section-subtitle { color: var(--muted); font-size: 0.9em; margin-top: 6px; }
-
-/* ============ CHAPTERS GRID ============ */
-.chapters-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-}
-
-.chapters-grid.hidden-grid {
-    display: none;
-}
-
-.chapter-card {
+/* ============ BACKLOG SECTION (معسكر الإنقاذ) ============ */
+.backlog-container {
     background: var(--white);
-    border: none;
-    border-radius: var(--radius);
-    box-shadow: var(--card-shadow);
-    cursor: pointer;
-    text-align: right;
-    padding: 0;
+    border-radius: 24px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+    border: 1px solid rgba(0,156,228,0.08);
+    position: relative;
+    overflow: hidden;
+    animation: slideInUp 0.6s ease-out;
+}
+@keyframes slideInUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+.backlog-header { text-align: center; margin-bottom: 25px; }
+.backlog-title { font-size: 1.6em; font-weight: 900; color: var(--navy); display: flex; align-items: center; justify-content: center; gap: 10px; }
+.fire-icon { color: var(--pink); animation: pulse 1.5s infinite; }
+@keyframes pulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.1); opacity: 0.8; } 100% { transform: scale(1); opacity: 1; } }
+.backlog-subtitle { color: var(--muted); font-size: 0.9em; margin-top: 4px; }
+
+/* شريط التقدم التفاعلي */
+.progress-dashboard {
+    background: linear-gradient(135deg, var(--sky-light), #fbfdff);
+    padding: 20px;
+    border-radius: 16px;
+    margin-bottom: 25px;
+    border: 1px solid rgba(0,156,228,0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+.progress-meta { display: flex; align-items: center; justify-content: space-between; width: 100%; font-weight: 700; }
+.progress-label { font-size: 0.95em; color: var(--navy-mid); }
+.progress-percent { font-size: 1.2em; color: var(--sky); font-weight: 900; }
+
+.progress-bar-container {
+    width: 100%;
+    height: 12px;
+    background: #e1e9f0;
+    border-radius: 10px;
     overflow: hidden;
     position: relative;
 }
-.chapter-card::before {
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--sky), var(--success));
+    width: 0%; /* هيتغير بالجافاسكريبت */
+    border-radius: 10px;
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+.progress-bar-fill::after {
     content: '';
     position: absolute;
-    top: 0; right: 0;
-    width: 4px; height: 100%;
-    background: var(--card-color, var(--sky));
-    border-radius: 0 var(--radius) var(--radius) 0;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+    animation: shimmer 2s infinite;
 }
-.chapter-card-inner { padding: 20px 18px 18px 14px; display: flex; flex-direction: column; gap: 10px; height: 100%; }
-.chapter-number {
-    font-size: 2.2em; font-weight: 900; color: var(--card-color, var(--sky));
-    opacity: 0.15; line-height: 1; position: absolute; top: 10px; left: 12px;
+@keyframes shimmer { 100% { transform: translateX(100%); } }
+
+.status-message { font-size: 0.88em; color: var(--muted); font-weight: 600; text-align: center; transition: color 0.3s; }
+.status-message.great { color: var(--success); }
+
+/* جدول الأيام التفاعلي */
+.backlog-table { display: flex; flex-direction: column; gap: 12px; }
+
+.day-row {
+    background: var(--bg);
+    border-radius: 14px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+    opacity: 0;
+    animation: fadeIn 0.4s ease forwards;
 }
-.chapter-icon-wrap {
-    width: 48px; height: 48px;
-    background: color-mix(in srgb, var(--card-color, var(--sky)) 12%, transparent);
-    border-radius: 12px;
+@keyframes fadeIn { to { opacity: 1; } }
+.day-row:hover { transform: translateX(-5px); background: #e8eff5; }
+.day-row.completed { background: color-mix(in srgb, var(--success) 10%, var(--white)); border-color: color-mix(in srgb, var(--success) 30%, transparent); }
+
+/* عمود التاريخ واليوم */
+.date-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--white);
+    color: var(--navy);
+    padding: 10px;
+    border-radius: 10px;
+    width: 65px;
+    height: 65px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.day-name { font-size: 0.75em; font-weight: 700; opacity: 0.7; }
+.day-date { font-size: 1.1em; font-weight: 900; line-height: 1.1; margin-top: 2px; }
+
+/* عمود المحتوى */
+.content-column { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+.chapter-tag { font-size: 0.7em; font-weight: 700; color: var(--white); background: var(--sky); padding: 2px 8px; border-radius: 6px; align-self: flex-start; }
+.lesson-title-backlog { font-size: 0.9em; font-weight: 700; color: var(--text); line-height: 1.4; }
+.day-row.completed .lesson-title-backlog { text-decoration: line-through; opacity: 0.6; }
+
+/* عمود الأكشن */
+.action-column { display: flex; items-center; gap: 10px; }
+
+/* زر التشغيل الشيك */
+.play-lesson-btn {
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    border: none;
+    background: var(--white);
+    color: var(--sky);
     display: flex; align-items: center; justify-content: center;
+    font-size: 1.1em;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0,156,228,0.15);
+    transition: all 0.2s;
 }
-.chapter-icon { font-size: 1.4em; color: var(--card-color, var(--sky)); }
-.chapter-info { flex: 1; }
+.play-lesson-btn:hover { background: var(--sky); color: var(--white); transform: scale(1.1); }
+.day-row.completed .play-lesson-btn { background: #e1e9f0; color: var(--muted); box-shadow: none; cursor: default; }
+
+/* التشيك بوكس الاحترافي الجديد */
+.complete-checkbox { position: relative; width: 26px; height: 26px; cursor: pointer; -webkit-appearance: none; appearance: none; background: var(--white); border: 2px solid #ccd5e0; border-radius: 7px; transition: all 0.2s; }
+.complete-checkbox:checked { background: var(--success); border-color: var(--success); animation: jelly 0.4s; }
+.complete-checkbox::after { content: '\f00c'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); color: white; font-size: 0.85em; transition: transform 0.2s; }
+.complete-checkbox:checked::after { transform: translate(-50%, -50%) scale(1); }
+@keyframes jelly { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } 75% { transform: scale(0.9); } }
+
+/* ============ MAIN CONTENT & CHAPTERS ============ */
+.chapters-grid-container { margin-top: 10px; }
+.section-header { text-align: center; margin-bottom: 28px; }
+.section-title { font-size: 1.45em; font-weight: 800; color: var(--navy); display: flex; align-items: center; justify-content: center; gap: 10px; }
+.title-accent { display: inline-block; width: 4px; height: 24px; background: linear-gradient(to bottom, var(--sky), var(--pink)); border-radius: 2px; }
+.section-subtitle { color: var(--muted); font-size: 0.9em; margin-top: 6px; }
+
+.chapters-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; transition: opacity 0.3s; }
+.chapters-grid.hidden-grid { display: none; }
+
+.chapter-card { background: var(--white); border: none; border-radius: var(--radius); box-shadow: var(--card-shadow); cursor: pointer; text-align: right; padding: 0; overflow: hidden; position: relative; transition: transform 0.2s; }
+.chapter-card:hover { transform: translateY(-5px); }
+.chapter-card::before { content: ''; position: absolute; top: 0; right: 0; width: 4px; height: 100%; background: var(--card-color); border-radius: 0 var(--radius) var(--radius) 0; }
+.chapter-card-inner { padding: 20px 18px 18px 14px; display: flex; flex-direction: column; gap: 10px; }
+.chapter-icon-wrap { width: 48px; height: 48px; background: color-mix(in srgb, var(--card-color) 12%, transparent); border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+.chapter-icon { font-size: 1.4em; color: var(--card-color); }
 .chapter-card-title { font-size: 1.02em; font-weight: 800; color: var(--navy); line-height: 1.3; }
-.chapter-card-desc { font-size: 0.8em; color: var(--muted); margin-top: 4px; line-height: 1.5; }
-.chapter-meta { display: flex; align-items: center; justify-content: space-between; margin-top: 4px; }
-.lesson-count { font-size: 0.78em; color: var(--card-color, var(--sky)); font-weight: 700; }
-.chapter-arrow { color: var(--card-color, var(--sky)); opacity: 0.7; }
+.lesson-count { font-size: 0.78em; color: var(--card-color); font-weight: 700; margin-top: auto; }
 
 /* ============ LESSONS PANEL ============ */
 .lessons-panel { display: none; }
-.lessons-panel.visible { display: block; animation: panelIn 0.35s ease; }
-@keyframes panelIn {
-    from { opacity: 0; transform: translateY(16px); }
-    to   { opacity: 1; transform: translateY(0); }
-}
+.lessons-panel.visible { display: block; animation: panelIn 0.35s ease-out; }
+@keyframes panelIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
 
-.lessons-header { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; flex-wrap: wrap; }
-.back-btn {
-    background: var(--white);
-    border: 1.5px solid #e5e7eb;
-    color: var(--navy);
-    cursor: pointer;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    border-radius: 10px;
-    padding: 9px 16px;
-    font-size: 0.88em;
-}
-.lesson-chapter-title { font-size: 1.2em; font-weight: 800; color: var(--chapter-color, var(--navy)); flex: 1; }
+.lessons-header { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+.back-btn { background: var(--white); border: 1.5px solid #e5e7eb; color: var(--navy); cursor: pointer; font-weight: 700; display: flex; align-items: center; gap: 7px; border-radius: 10px; padding: 9px 16px; font-size: 0.88em; }
+.lesson-chapter-title { font-size: 1.2em; font-weight: 800; color: var(--chapter-color); flex: 1; }
 
-/* تم تعديل هذا الجزء ليصبح قائمة عمودية بدل الشبكة */
-.lessons-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px;
-}
-
-.lesson-card {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 16px;
-    background: var(--white);
-    padding: 16px;
-    border-radius: 16px;
-    text-decoration: none;
-    color: var(--text);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    border: 2px solid transparent;
-}
+.lessons-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.lesson-card { display: flex; flex-direction: row; align-items: center; gap: 16px; background: var(--white); padding: 16px; border-radius: 16px; text-decoration: none; color: var(--text); box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 2px solid transparent; }
 .lesson-card:hover { background: var(--sky-light); border-color: rgba(0,156,228,0.2); }
-
-.lesson-icon-wrap {
-    width: 65px; height: 65px;
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8em;
-    flex-shrink: 0;
-}
-.lesson-card--video .lesson-icon-wrap { background: rgba(255,0,0,0.08); color: var(--yt); }
-.lesson-card--workshop .lesson-icon-wrap { background: rgba(24,119,242,0.08); color: var(--fb); }
-.lesson-card--pdf .lesson-icon-wrap { background: rgba(226,87,76,0.08); color: #e2574c; }
-
-.lesson-content { 
-    display: flex; 
-    flex-direction: column; 
-    align-items: flex-start;
-    text-align: right;
-    flex: 1; 
-}
-.lesson-card-title { 
-    font-size: 0.95em; 
-    font-weight: 800; 
-    line-height: 1.8; 
-    color: var(--text); 
-    margin-bottom: 5px; 
-}
-.lesson-type-badge {
-    display: inline-block;
-    font-size: 0.72em;
-    font-weight: 700;
-    padding: 2px 8px;
-    border-radius: 6px;
-    margin-top: 6px;
-}
+.lesson-icon-wrap-l { width: 65px; height: 65px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.8em; flex-shrink: 0; }
+.lesson-card--video .lesson-icon-wrap-l { background: rgba(255,0,0,0.08); color: #FF0000; }
+.lesson-card--workshop .lesson-icon-wrap-l { background: rgba(24,119,242,0.08); color: #1877F2; }
+.lesson-card--pdf .lesson-icon-wrap-l { background: rgba(226,87,76,0.08); color: #e2574c; }
+.lesson-content { display: flex; flex-direction: column; align-items: flex-start; text-align: right; flex: 1; }
+.lesson-card-title { font-size: 0.95em; font-weight: 800; line-height: 1.8; color: var(--text); margin-bottom: 5px; }
+.lesson-type-badge { display: inline-block; font-size: 0.72em; font-weight: 700; padding: 2px 8px; border-radius: 6px; margin-top: 2px; }
 .lesson-type-badge--video { background: rgba(255,0,0,0.08); color: #cc0000; }
 .lesson-type-badge--workshop { background: rgba(24,119,242,0.08); color: #1559b8; }
 .lesson-type-badge--pdf { background: rgba(226,87,76,0.08); color: #c04030; }
 
-.lesson-link-icon { display: none; }
-
 /* ============ FOOTER ============ */
 footer { background: var(--white); padding: 36px 0 24px; margin-top: 40px; border-top: 1px solid #e5e7eb; }
-.footer-inner { display: flex; flex-direction: column; align-items: center; gap: 20px; }
-.dua-section-card {
-    background: linear-gradient(135deg, #f8faff, #f0f4ff);
-    padding: 22px 24px;
-    border-radius: 16px;
-    border: 1px dashed rgba(9,32,63,0.15);
-    display: flex; align-items: flex-start; gap: 14px; width: 100%; max-width: 620px;
-}
-.dua-icon-wrap {
-    width: 44px; height: 44px; background: var(--navy); border-radius: 12px;
-    display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2em; flex-shrink: 0;
-}
+.dua-section-card { background: linear-gradient(135deg, #f8faff, #f0f4ff); padding: 20px; border-radius: 16px; border: 1px dashed rgba(9,32,63,0.15); display: flex; gap: 14px; max-width: 620px; margin: 0 auto 20px; }
+.dua-icon-wrap { width: 44px; height: 44px; background: var(--navy); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2em; flex-shrink: 0; }
 .dua-section-card p { font-size: 0.9em; color: #4b5563; line-height: 1.8; }
 .footer-bottom { display: flex; flex-direction: column; align-items: center; gap: 8px; }
-.footer-logo { width: 40px; opacity: 0.6; }
 .copyright { color: #9ca3af; font-size: 0.8em; }
 
 /* ============ RESPONSIVE ============ */
 @media (max-width: 600px) {
     .chapters-grid { grid-template-columns: 1fr; }
-    /* تم حذف كود الموبايل الخاص بدروس الأبواب عشان تفضل قائمة عمودية دايماً */
-    .teacher-name { font-size: 1.75em; }
-    .stats-row { padding: 10px 16px; gap: 0; }
-    .stat-number { font-size: 1.25em; }
+    .day-row { padding: 12px; gap: 10px; }
+    .date-column { width: 55px; height: 55px; }
+    .play-lesson-btn { width: 36px; height: 36px; font-size: 0.95em; }
+    .backlog-title { font-size: 1.3em; }
+    .progress-percent { font-size: 1.1em; }
 }
-
-/* ============ SCROLLBAR & SELECTION ============ */
-::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: #c5d0de; border-radius: 4px; }
-::selection { background: rgba(0,156,228,0.2); color: var(--navy); }
