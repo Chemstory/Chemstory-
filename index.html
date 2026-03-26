@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>كيمستوري | معسكر الإنقاذ مع مستر فارس</title>
+    <title>كيمستوري | دكتور الكيمياء مستر فارس</title>
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#09203f">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="description" content="منصة كيمستوري - معسكر الإنقاذ لمادة الكيمياء مع مستر فارس">
+    <meta name="description" content="منصة كيمستوري - شرح مادة الكيمياء للثانوية العامة مع مستر فارس">
     <link rel="icon" type="image/png" href="icon-192.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,31 +53,6 @@
     </header>
 
     <main class="container content-wrapper">
-
-        <section class="backlog-container" id="backlog-section">
-            <div class="backlog-header">
-                <h2 class="backlog-title">
-                    <i class="fas fa-fire-alt fire-icon"></i>
-                    معسكر الإنقاذ - لم المتراكم
-                </h2>
-                <p class="backlog-subtitle">خطة إنقاذ من ٢٨ مارس لـ ٢٠ مايو 💪</p>
-            </div>
-
-            <div class="progress-dashboard">
-                <div class="progress-meta">
-                    <span class="progress-label">مستوى إنجازك يا بطل:</span>
-                    <span id="progress-percent" class="progress-percent">0%</span>
-                </div>
-                <div class="progress-bar-container">
-                    <div id="progress-bar-fill" class="progress-bar-fill"></div>
-                </div>
-                <p id="status-message" class="status-message">بداية موفقة يا بطل.. الحلم بيتحقق خطوة خطوة!</p>
-            </div>
-
-            <div class="backlog-table" id="backlog-table-body">
-                </div>
-        </section>
-
         <section class="chapters-grid-container" id="chapters-section">
             <div class="section-header">
                 <h3 class="section-title"><span class="title-accent"></span>منهج الكيمياء</h3>
@@ -87,39 +60,87 @@
             </div>
 
             <div class="chapters-grid" id="main-chapter-grid">
+                
+                <a href="camp.html" class="chapter-card" style="--card-color: #ff2e7e;">
+                    <div class="chapter-card-inner">
+                        <div class="chapter-icon-wrap" style="background: rgba(255, 46, 126, 0.12);">
+                            <i class="fas fa-fire-alt chapter-icon" style="color: #ff2e7e;"></i>
+                        </div>
+                        <div class="chapter-info">
+                            <h4 class="chapter-card-title">معسكر الإنقاذ</h4>
+                            <p class="chapter-card-desc">جدول لم المتراكم (تفاعلي)</p>
+                        </div>
+                        <div class="chapter-meta">
+                            <span class="lesson-count" style="color: #ff2e7e;"><i class="fas fa-play"></i> ابدأ الآن</span>
+                            <i class="fas fa-arrow-left chapter-arrow" style="color: #ff2e7e;"></i>
+                        </div>
+                    </div>
+                </a>
+
                 <button class="chapter-card" data-chapter="ch1" style="--card-color: #009ce4;">
                     <div class="chapter-card-inner">
+                        <div class="chapter-number">01</div>
                         <div class="chapter-icon-wrap"><i class="fas fa-atom chapter-icon"></i></div>
-                        <h4 class="chapter-card-title">العناصر الانتقالية</h4>
-                        <span class="lesson-count">8 دروس</span>
+                        <div class="chapter-info">
+                            <h4 class="chapter-card-title">العناصر الانتقالية</h4>
+                            <p class="chapter-card-desc">السلسلة الأولى، الحديد وسبائكه</p>
+                        </div>
+                        <div class="chapter-meta">
+                            <span class="lesson-count">8 دروس</span>
+                            <i class="fas fa-arrow-left chapter-arrow"></i>
+                        </div>
                     </div>
                 </button>
+
                 <button class="chapter-card" data-chapter="ch2" style="--card-color: #7c3aed;">
                     <div class="chapter-card-inner">
+                        <div class="chapter-number">02</div>
                         <div class="chapter-icon-wrap"><i class="fas fa-flask chapter-icon"></i></div>
-                        <h4 class="chapter-card-title">الكيمياء التحليلية</h4>
-                        <span class="lesson-count">5 دروس</span>
+                        <div class="chapter-info">
+                            <h4 class="chapter-card-title">الكيمياء التحليلية</h4>
+                            <p class="chapter-card-desc">الكاتيونات، الأنيونات، المعايرة</p>
+                        </div>
+                        <div class="chapter-meta">
+                            <span class="lesson-count">5 دروس</span>
+                            <i class="fas fa-arrow-left chapter-arrow"></i>
+                        </div>
                     </div>
                 </button>
+
                 <button class="chapter-card" data-chapter="ch3" style="--card-color: #059669;">
                     <div class="chapter-card-inner">
+                        <div class="chapter-number">03</div>
                         <div class="chapter-icon-wrap"><i class="fas fa-balance-scale chapter-icon"></i></div>
-                        <h4 class="chapter-card-title">الاتزان الكيميائي</h4>
-                        <span class="lesson-count">6 دروس</span>
+                        <div class="chapter-info">
+                            <h4 class="chapter-card-title">الاتزان الكيميائي</h4>
+                            <p class="chapter-card-desc">العوامل المؤثرة، تأين الماء</p>
+                        </div>
+                        <div class="chapter-meta">
+                            <span class="lesson-count">6 دروس</span>
+                            <i class="fas fa-arrow-left chapter-arrow"></i>
+                        </div>
                     </div>
                 </button>
+
                 <button class="chapter-card" data-chapter="ch4" style="--card-color: #dc2626;">
                     <div class="chapter-card-inner">
+                        <div class="chapter-number">04</div>
                         <div class="chapter-icon-wrap"><i class="fas fa-bolt chapter-icon"></i></div>
-                        <h4 class="chapter-card-title">الكيمياء الكهربية</h4>
-                        <span class="lesson-count">4 دروس</span>
+                        <div class="chapter-info">
+                            <h4 class="chapter-card-title">الكيمياء الكهربية</h4>
+                            <p class="chapter-card-desc">خلية دانيال، الخلايا الجلفانية</p>
+                        </div>
+                        <div class="chapter-meta">
+                            <span class="lesson-count">4 دروس</span>
+                            <i class="fas fa-arrow-left chapter-arrow"></i>
+                        </div>
                     </div>
                 </button>
             </div>
 
             <div class="lessons-panel" id="lessons-panel">
                 <div class="lessons-header">
-                    <button id="back-to-chapters" class="back-btn"><i class="fas fa-arrow-right"></i><span>الأبواب</span></button>
+                    <button id="back-to-chapters" class="back-btn"><i class="fas fa-arrow-right"></i><span>رجوع للأبواب</span></button>
                     <h4 id="current-chapter-title" class="lesson-chapter-title"></h4>
                 </div>
                 <div class="lessons-grid" id="lesson-item-grid"></div>
@@ -142,4 +163,3 @@
     <script src="app.js"></script>
 </body>
 </html>
-
