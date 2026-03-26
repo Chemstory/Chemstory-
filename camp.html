@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>معسكر الإنقاذ | كيمستوري</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="theme-color" content="#09203f">
+    <link rel="icon" type="image/png" href="icon-192.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header style="padding: 20px 0; margin-bottom: 10px; border-radius: 0 0 20px 20px;">
+        <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
+            <a href="index.html" class="back-btn" style="background: rgba(255,255,255,0.1); border: none; color: white;">
+                <i class="fas fa-arrow-right"></i>
+                <span>الرئيسية</span>
+            </a>
+            <h3 style="font-family: 'Tajawal', sans-serif; font-weight: 800; margin: 0;">كيمستوري</h3>
+        </div>
+    </header>
+
+    <main class="container backlog-container">
+        <div class="backlog-header">
+            <h2 class="backlog-title">
+                <i class="fas fa-fire-alt fire-icon"></i>
+                معسكر الإنقاذ - لم المتراكم
+            </h2>
+            <p class="backlog-subtitle">خطة إنقاذ من ٢٨ مارس لـ ٢٠ مايو 💪</p>
+        </div>
+
+        <div class="progress-dashboard">
+            <div class="progress-meta">
+                <span class="progress-label">مستوى إنجازك يا بطل:</span>
+                <span id="progress-percent" class="progress-percent">0%</span>
+            </div>
+            <div class="progress-bar-container">
+                <div id="progress-bar-fill" class="progress-bar-fill"></div>
+            </div>
+            <p id="status-message" class="status-message">بداية موفقة يا بطل.. الحلم بيتحقق خطوة خطوة!</p>
+        </div>
+
+        <div class="backlog-table" id="backlog-table-body">
+            </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
