@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         mainChapterGrid.addEventListener('click', (e) => {
-            const card = e.target.closest('button.chapter-card'); // عشان ما يفتحش لينك المعسكر
+            const card = e.target.closest('button.chapter-card'); 
             if (card) showLessons(card.dataset.chapter);
         });
 
