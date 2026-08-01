@@ -1,31 +1,30 @@
 // ============================================
-// كيمستوري - Service Worker (sw.js)
-// Cache-First Strategy for offline support
+// كيمستوري - Service Worker (sw.js) V3
+// Fast Load & Offline Support (الدور الثاني)
 // ============================================
 
-const CACHE_NAME = 'chemstory-v2';
+const CACHE_NAME = 'chemstory-v3-round2'; // تم تغيير اسم الكاش لإجبار الأجهزة على التحديث
 const STATIC_ASSETS = [
     './',
     './index.html',
+    './camp.html',
     './style.css',
     './app.js',
     './manifest.json',
     'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
-    'https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700;800&display=swap'
+    // الخطوط الجديدة المستخدمة في التصميم الحديث
+    'https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600;700;900&family=Cairo:wght@400;600;700;800&display=swap'
 ];
 
 // ===== التثبيت: كاش الأصول الأساسية =====
 self.addEventListener('install', (evt) => {
+    self.skipWaiting(); // تفعيل السيرفيس وركر الجديد فوراً بدون انتظار عشان التحديث يظهر للطلاب علطول
     evt.waitUntil(
         caches.open(CACHE_NAME).then((cache) => {
-            console.log('[SW] Caching static assets...');
-            // نكاش كل ملف على حدة عشان لو واحد فشل ما يوقفش الباقيين
+            console.log('[SW] Caching static assets v3...');
             return Promise.allSettled(
                 STATIC_ASSETS.map(url => cache.add(url).catch(e => console.warn('[SW] Failed to cache:', url, e)))
             );
-        }).then(() => {
-            console.log('[SW] Install complete ✓');
-            return self.skipWaiting();
         })
     );
 });
@@ -39,22 +38,20 @@ self.addEventListener('activate', (evt) => {
                     .filter(key => key !== CACHE_NAME)
                     .map(key => {
                         console.log('[SW] Deleting old cache:', key);
-                        return caches.delete(key);
+                        return caches.delete(key); // مسح ملفات الموقع القديمة
                     })
             );
         }).then(() => {
             console.log('[SW] Activate complete ✓');
-            return self.clients.claim();
+            return self.clients.claim(); // السيطرة على كل الصفحات المفتوحة لتطبيق التحديث
         })
     );
 });
 
-// ===== الجلب: Cache-First مع Network Fallback =====
+// ===== الجلب: Stale-While-Revalidate (تحميل أسرع) =====
 self.addEventListener('fetch', (evt) => {
-    // تجاهل طلبات غير GET
     if (evt.request.method !== 'GET') return;
 
-    // تجاهل روابط يوتيوب وخارجية (لا نكاشها)
     const url = new URL(evt.request.url);
     const isExternal = !url.origin.includes(self.location.origin) &&
                        !url.hostname.includes('fonts.googleapis.com') &&
@@ -62,36 +59,27 @@ self.addEventListener('fetch', (evt) => {
                        !url.hostname.includes('cdnjs.cloudflare.com');
 
     if (isExternal) {
-        return; // اتركه للمتصفح مباشرة
+        return; 
     }
 
     evt.respondWith(
         caches.match(evt.request).then((cachedRes) => {
-            if (cachedRes) {
-                // ارجع من الكاش وحدّث في الخلفية (Stale-While-Revalidate)
-                const fetchPromise = fetch(evt.request).then(networkRes => {
-                    if (networkRes && networkRes.status === 200) {
-                        const cloned = networkRes.clone();
-                        caches.open(CACHE_NAME).then(cache => cache.put(evt.request, cloned));
-                    }
-                    return networkRes;
-                }).catch(() => null);
-
-                return cachedRes;
-            }
-
-            // مش موجود في الكاش → جيبه من الشبكة وكاشه
-            return fetch(evt.request).then((networkRes) => {
-                if (!networkRes || networkRes.status !== 200) return networkRes;
-
-                const cloned = networkRes.clone();
-                caches.open(CACHE_NAME).then(cache => cache.put(evt.request, cloned));
+            // الاستراتيجية: اعرض الموجود في الكاش فوراً (لسرعة التحميل)، وفي الخلفية هات الجديد من النت
+            const fetchPromise = fetch(evt.request).then(networkRes => {
+                if (networkRes && networkRes.status === 200) {
+                    const cloned = networkRes.clone();
+                    caches.open(CACHE_NAME).then(cache => cache.put(evt.request, cloned));
+                }
                 return networkRes;
-            }).catch(() => {
-                // لو الاتنين فشلوا وكان HTML → ارجع الصفحة الرئيسية
-                if (evt.request.headers.get('accept')?.includes('text/html')) {
+            }).catch(() => null);
+
+            // لو الملف موجود في الكاش رجعه، لو مش موجود استنى الـ fetchPromise
+            return cachedRes || fetchPromise.then(res => {
+                // لو مفيش نت خالص والملف مش في الكاش (زي لو طالب فتح صفحة غلط)، رجعه للصفحة الرئيسية
+                if (!res && evt.request.headers.get('accept')?.includes('text/html')) {
                     return caches.match('./index.html');
                 }
+                return res;
             });
         })
     );
