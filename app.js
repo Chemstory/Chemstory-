@@ -157,3 +157,13 @@ document.addEventListener('DOMContentLoaded', () => {
         updateProgress();
     }
 });
+// كود إخفاء شاشة التحميل 
+setTimeout(() => {
+    const loader = document.getElementById('page-loader');
+    if (loader) {
+        loader.style.opacity = '0';
+        loader.style.pointerEvents = 'none';
+        setTimeout(() => loader.remove(), 800);
+    }
+}, 1200);
+
