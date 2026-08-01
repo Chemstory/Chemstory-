@@ -1,243 +1,135 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>كيمستوري | دكتور الكيمياء مستر فارس</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#09203f">
-    <meta name="description" content="منصة كيمستوري - شرح مادة الكيمياء للثانوية العامة مع مستر فارس">
-    <link rel="icon" type="image/png" href="icon-192.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
-</head>
-<body>
+<!DOCTYPE html>  
+<html lang="ar" dir="rtl">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">  
+    <title>كيمستوري | دكتور الكيمياء مستر فارس</title>  
+    <link rel="stylesheet" href="style.css">  
+    <link rel="manifest" href="manifest.json">  
+    <meta name="theme-color" content="#030812">  
+    <meta name="description" content="منصة كيمستوري - شرح مادة الكيمياء للثانوية العامة مع مستر فارس">  
+    <link rel="icon" type="image/png" href="icon-192.png">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  
+</head>  
+<body>  
+<!-- تأثيرات الإضاءة في الخلفية -->
+<div class="ambient-glow"></div>
+<div class="ambient-glow-2"></div>
 
-    <div id="page-loader" class="page-loader">
-        <div class="loader-atom">
-            <div class="nucleus"></div>
-            <div class="orbit orbit-1"><div class="electron"></div></div>
-            <div class="orbit orbit-2"><div class="electron"></div></div>
-            <div class="orbit orbit-3"><div class="electron"></div></div>
-        </div>
-        <p class="loader-text">كيمستوري</p>
-    </div>
+<div id="page-loader" class="page-loader" style="position: fixed; inset: 0; background: var(--bg); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 9999; transition: 0.5s;">  
+    <h2 style="color: var(--sky); font-family: 'Alexandria', sans-serif;">كيمستوري</h2>  
+    <p style="color: var(--muted);">يتم تحضير المعمل...</p>
+</div>  
 
-    <div class="notification-bar">
-        <i class="fas fa-fire quote-icon"></i>
-        <span id="daily-quote" class="daily-quote-text">يتم تحميل حلمك..</span>
-        <i class="fas fa-star quote-icon"></i>
-    </div>
+<div class="notification-bar glass-panel">  
+    <i class="fas fa-fire quote-icon"></i>  
+    <span id="daily-quote" class="daily-quote-text">يتم تحميل حلمك..</span>  
+    <i class="fas fa-star quote-icon"></i>  
+</div>  
 
-    <header>
-        <div class="chem-bg-animations">
-            <i class="fas fa-atom chem-icon-1"></i>
-            <i class="fas fa-flask chem-icon-2"></i>
-            <i class="fas fa-vial chem-icon-3"></i>
-            <i class="fas fa-magic chem-icon-4"></i>
-            <i class="fas fa-dna chem-icon-5"></i>
-            <i class="fas fa-mortar-pestle chem-icon-6"></i>
-        </div>
-
-        <div class="header-bg-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-            <div class="shape shape-3"></div>
-        </div>
-        
-        <div class="container hero-content">
-            <div class="teacher-profile-card">
-                <div class="profile-img-wrapper">
-                    <img src="profile.jpg" alt="مستر فارس" class="profile-img-show" onerror="this.src='https://ui-avatars.com/api/?name=Fares&background=009ce4&color=fff&size=150&bold=true'">
-                    <div class="profile-ring"></div>
-                </div>
-                
-                <div class="teacher-info-multi">
-                    <span class="rank-badge"><i class="fas fa-certificate"></i> دكتور الكيمياء</span>
-                    <h1 class="teacher-name">مستر فارس</h1>
-                    <p class="description-text">
-                        شرح كامل ومجاني تماماً لوجه الله تعالى
-                        <i class="fas fa-heart heart-icon"></i>
-                    </p>
-                    <div class="social-links-overlap">
-                        <a href="https://wa.me/201001499397" target="_blank" class="social-btn whatsapp" title="واتساب"><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://whatsapp.com/channel/0029VaygNoqLikg107YNdh0l" target="_blank" class="social-btn wa-channel" title="قناة الواتساب"><i class="fab fa-whatsapp"></i><span class="social-label">القناة</span></a>
-                        <a href="https://www.facebook.com/share/12FsQ25HUQN/" target="_blank" class="social-btn facebook" title="فيسبوك"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://youtube.com/@Chemist_ibrahem_Fares" target="_blank" class="social-btn youtube" title="يوتيوب"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="stats-row">
-                <div class="stat-item">
-                    <span class="stat-number">4</span>
-                    <span class="stat-label">أبواب</span>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <span class="stat-number">23+</span>
-                    <span class="stat-label">محاضرة</span>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label">مجاناً</span>
-                </div>
-            </div>
-
-            <div class="logo-bottom-wrapper">
-                <img src="logo.png" alt="كيمستوري" class="logo-tiny" onerror="this.style.display='none'">
+<header>  
+    <div class="container hero-content">  
+        <!-- العداد التنازلي للدور الثاني -->
+        <div class="countdown-banner glass-panel">
+            <h4><i class="fas fa-stopwatch"></i> متبقي على امتحان الدور الثاني:</h4>
+            <div class="countdown-timer">
+                <div class="time-box"><span id="days">00</span><span>يوم</span></div>
+                <div class="time-box"><span id="hours">00</span><span>ساعة</span></div>
+                <div class="time-box"><span id="mins">00</span><span>دقيقة</span></div>
             </div>
         </div>
-    </header>
 
-    <main class="container content-wrapper">
-        <section class="chapters-grid-container" id="chapters-section">
-            <div class="section-header">
-                <h3 class="section-title"><span class="title-accent"></span>منهج الكيمياء للثانوية العامة</h3>
-                <p class="section-subtitle">اختر الباب لبدء المذاكرة</p>
-            </div>
+        <div class="teacher-profile-card">  
+            <img src="profile.jpg" alt="مستر فارس" class="profile-img-show" onerror="this.src='https://ui-avatars.com/api/?name=Fares&background=00e1ff&color=fff&size=150&bold=true'">  
+            <span class="rank-badge"><i class="fas fa-certificate"></i> دكتور الكيمياء</span>  
+            <h1 class="teacher-name">مستر فارس</h1>  
+            <p style="color: var(--muted); margin-bottom: 10px;">شرح كامل ومجاني لوجه الله تعالى <i class="fas fa-heart" style="color: var(--pink);"></i></p>  
+            
+            <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">  
+                <a href="https://wa.me/201001499397" target="_blank" class="glass-panel" style="padding: 8px 15px; color: #25D366;"><i class="fab fa-whatsapp"></i> تواصل</a>  
+                <a href="https://youtube.com/@Chemist_ibrahem_Fares" target="_blank" class="glass-panel" style="padding: 8px 15px; color: #FF0000;"><i class="fab fa-youtube"></i> يوتيوب</a>  
+            </div>  
+        </div>  
+    </div>  
+</header>  
 
-            <div class="chapters-grid" id="main-chapter-grid">
-                
-                <a href="camp.html" class="chapter-card" style="--card-color: #ff2e7e;">
-                    <div class="chapter-card-inner">
-                        <div class="chapter-icon-wrap" style="background: rgba(255, 46, 126, 0.12);">
-                            <i class="fas fa-fire-alt chapter-icon" style="color: #ff2e7e;"></i>
-                        </div>
-                        <div class="chapter-info">
-                            <h4 class="chapter-card-title">معسكر الإنقاذ</h4>
-                            <p class="chapter-card-desc">جدول لم المتراكم (تفاعلي)</p>
-                        </div>
-                        <div class="chapter-meta">
-                            <span class="lesson-count" style="color: #ff2e7e;"><i class="fas fa-play"></i> ابدأ الآن</span>
-                            <i class="fas fa-arrow-left chapter-arrow" style="color: #ff2e7e;"></i>
-                        </div>
-                    </div>
-                </a>
+<main class="container content-wrapper">  
+    <section class="chapters-grid-container" id="chapters-section">  
+        <div style="text-align: center; margin-bottom: 30px;">  
+            <h3 style="font-size: 1.8em; color: white;">منهج الكيمياء للثانوية العامة</h3>  
+            <p style="color: var(--muted);">اختر الباب لبدء المذاكرة</p>  
+        </div>  
 
-                <button class="chapter-card" data-chapter="ch1" style="--card-color: #009ce4;">
-                    <div class="chapter-card-inner">
-                        <div class="chapter-number">01</div>
-                        <div class="chapter-icon-wrap"><i class="fas fa-atom chapter-icon"></i></div>
-                        <div class="chapter-info">
-                            <h4 class="chapter-card-title">العناصر الانتقالية</h4>
-                            <p class="chapter-card-desc">السلسلة الأولى، الحديد وسبائكه</p>
-                        </div>
-                        <div class="chapter-meta">
-                            <span class="lesson-count">8 دروس</span>
-                            <i class="fas fa-arrow-left chapter-arrow"></i>
-                        </div>
-                    </div>
-                </button>
+        <div class="chapters-grid" id="main-chapter-grid">  
+            
+            <!-- كارت المعسكر الجديد -->
+            <a href="camp.html" class="chapter-card glass-panel" style="--card-color: #ff2e7e; border: 1px solid rgba(255,46,126,0.3);">  
+                <div class="chapter-icon-wrap" style="background: rgba(255, 46, 126, 0.2);"><i class="fas fa-fire-alt"></i></div>  
+                <div>  
+                    <h4 class="chapter-card-title">معسكر الدور الثاني</h4>  
+                    <p class="chapter-card-desc">خطة ٢٥ يوم لضمان النجاح (تفاعلي)</p>  
+                </div>  
+            </a>  
 
-                <button class="chapter-card" data-chapter="ch2" style="--card-color: #7c3aed;">
-                    <div class="chapter-card-inner">
-                        <div class="chapter-number">02</div>
-                        <div class="chapter-icon-wrap"><i class="fas fa-flask chapter-icon"></i></div>
-                        <div class="chapter-info">
-                            <h4 class="chapter-card-title">الكيمياء التحليلية</h4>
-                            <p class="chapter-card-desc">الكاتيونات، الأنيونات، المعايرة</p>
-                        </div>
-                        <div class="chapter-meta">
-                            <span class="lesson-count">5 دروس</span>
-                            <i class="fas fa-arrow-left chapter-arrow"></i>
-                        </div>
-                    </div>
-                </button>
+            <div class="chapter-card glass-panel" data-chapter="ch1" style="--card-color: #00e1ff;">  
+                <div class="chapter-number">01</div>  
+                <div class="chapter-icon-wrap"><i class="fas fa-atom"></i></div>  
+                <div><h4 class="chapter-card-title">العناصر الانتقالية</h4><p class="chapter-card-desc">السلسلة الأولى، الحديد وسبائكه</p></div>  
+            </div>  
 
-                <button class="chapter-card" data-chapter="ch3" style="--card-color: #059669;">
-                    <div class="chapter-card-inner">
-                        <div class="chapter-number">03</div>
-                        <div class="chapter-icon-wrap"><i class="fas fa-balance-scale chapter-icon"></i></div>
-                        <div class="chapter-info">
-                            <h4 class="chapter-card-title">الاتزان الكيميائي</h4>
-                            <p class="chapter-card-desc">العوامل المؤثرة، تأين الماء</p>
-                        </div>
-                        <div class="chapter-meta">
-                            <span class="lesson-count">6 دروس</span>
-                            <i class="fas fa-arrow-left chapter-arrow"></i>
-                        </div>
-                    </div>
-                </button>
+            <div class="chapter-card glass-panel" data-chapter="ch2" style="--card-color: #8b5cf6;">  
+                <div class="chapter-number">02</div>  
+                <div class="chapter-icon-wrap"><i class="fas fa-flask"></i></div>  
+                <div><h4 class="chapter-card-title">الكيمياء التحليلية</h4><p class="chapter-card-desc">الكاتيونات، الأنيونات، المعايرة</p></div>  
+            </div>  
 
-                <button class="chapter-card" data-chapter="ch4" style="--card-color: #dc2626;">
-                    <div class="chapter-card-inner">
-                        <div class="chapter-number">04</div>
-                        <div class="chapter-icon-wrap"><i class="fas fa-bolt chapter-icon"></i></div>
-                        <div class="chapter-info">
-                            <h4 class="chapter-card-title">الكيمياء الكهربية</h4>
-                            <p class="chapter-card-desc">خلية دانيال، الخلايا الجلفانية</p>
-                        </div>
-                        <div class="chapter-meta">
-                            <span class="lesson-count">4 دروس</span>
-                            <i class="fas fa-arrow-left chapter-arrow"></i>
-                        </div>
-                    </div>
-                </button>
-            </div>
+            <div class="chapter-card glass-panel" data-chapter="ch3" style="--card-color: #2ecc71;">  
+                <div class="chapter-number">03</div>  
+                <div class="chapter-icon-wrap"><i class="fas fa-balance-scale"></i></div>  
+                <div><h4 class="chapter-card-title">الاتزان الكيميائي</h4><p class="chapter-card-desc">العوامل المؤثرة، تأين الماء</p></div>  
+            </div>  
 
-            <div class="lessons-panel" id="lessons-panel">
-                <div class="lessons-header">
-                    <button id="back-to-chapters" class="back-btn"><i class="fas fa-arrow-right"></i><span>رجوع للأبواب</span></button>
-                    <h4 id="current-chapter-title" class="lesson-chapter-title"></h4>
-                </div>
-                <div class="lessons-grid" id="lesson-item-grid"></div>
-            </div>
-        </section>
+            <div class="chapter-card glass-panel" data-chapter="ch4" style="--card-color: #ff2e7e;">  
+                <div class="chapter-number">04</div>  
+                <div class="chapter-icon-wrap"><i class="fas fa-bolt"></i></div>  
+                <div><h4 class="chapter-card-title">الكيمياء الكهربية</h4><p class="chapter-card-desc">خلية دانيال، الخلايا الجلفانية</p></div>  
+            </div>  
 
-        <section class="testimonials-container">
-            <div class="section-header">
-                <h3 class="section-title"><span class="title-accent"></span>نصائح أبطال الدفعات السابقة</h3>
-                <p class="section-subtitle">رسائل من زمايلك عشان تشجعك</p>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testi-card">
-                    <div class="testi-icon"><i class="fas fa-user-md"></i></div>
-                    <div class="testi-content">
-                        <h5>د. أحمد (طب بشري)</h5>
-                        <p>"السر في الحل الكتير والمراجعة المستمرة. الكيمياء مادة تقفيل لو اتفهمت صح مع مستر فارس!"</p>
-                    </div>
-                </div>
-                <div class="testi-card">
-                    <div class="testi-icon" style="color: #ff2e7e;"><i class="fas fa-stethoscope"></i></div>
-                    <div class="testi-content">
-                        <h5>د. ندى (طب أسنان)</h5>
-                        <p>"عدم التراكم هو اللي وصلني لهدفي. مستر فارس كان دايماً بيسهل الصعب وينظم دماغنا."</p>
-                    </div>
-                </div>
-                <div class="testi-card">
-                    <div class="testi-icon" style="color: #059669;"><i class="fas fa-pills"></i></div>
-                    <div class="testi-content">
-                        <h5>د. فاطمة (صيدلة)</h5>
-                        <p>"العضوية والتحليلية محتاجين تأسيس وفهم عميق. نصيحتي ليكم: متخافوش من الكيمياء وحبوها."</p>
-                    </div>
-                </div>
-                <div class="testi-card">
-                    <div class="testi-icon" style="color: #f1c40f;"><i class="fas fa-hard-hat"></i></div>
-                    <div class="testi-content">
-                        <h5>م. عمر (هندسة)</h5>
-                        <p>"ورقة وقلم ولخص بنفسك. التنظيم هو مفتاح التفوق، والكيمياء كانت من أعلى درجاتي الحمد لله."</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+            <!-- الباب الخامس المضاف حديثاً -->
+            <div class="chapter-card glass-panel" data-chapter="ch5" style="--card-color: #f1c40f;">  
+                <div class="chapter-number">05</div>  
+                <div class="chapter-icon-wrap"><i class="fas fa-dna"></i></div>  
+                <div><h4 class="chapter-card-title">الكيمياء العضوية</h4><p class="chapter-card-desc">الهيدروكربونات ومشتقاتها</p></div>  
+            </div>  
 
-    <footer>
-        <div class="container footer-inner">
-            <div class="dua-section-card">
-                <div class="dua-icon-wrap"><i class="fas fa-hands-praying"></i></div>
-                <p>نسألكم خالص الدعاء لي ولوالدي، وأن ييسر الله لي إنهاء فترة التجنيد على خير والعودة إليكم في أسرع وقت.</p>
-            </div>
-            <div class="footer-bottom">
-                <p class="copyright">جميع الحقوق محفوظة © كيمستوري - د. فارس ٢٠٢٥</p>
-            </div>
-        </div>
-    </footer>
+            <!-- قسم المراجعات النهائية -->
+            <div class="chapter-card glass-panel" data-chapter="rev" style="--card-color: #ff4757; grid-column: 1 / -1;">  
+                <div class="chapter-icon-wrap"><i class="fas fa-tasks"></i></div>  
+                <div><h4 class="chapter-card-title">المراجعات النهائية والاسترشادي</h4><p class="chapter-card-desc">حل أسئلة النماذج الاسترشادية والمراجعات الشاملة</p></div>  
+            </div>  
 
-    <script src="app.js"></script>
-</body>
+        </div>  
+
+        <div class="lessons-panel glass-panel" id="lessons-panel" style="display: none; padding: 25px; margin-top: 20px;">  
+            <div style="display: flex; gap: 15px; align-items: center; margin-bottom: 25px;">  
+                <button id="back-to-chapters" style="background: rgba(255,255,255,0.1); border: none; color: white; padding: 10px 15px; border-radius: 10px; cursor: pointer;"><i class="fas fa-arrow-right"></i> رجوع</button>  
+                <h4 id="current-chapter-title" style="color: white; margin: 0; font-size: 1.3em;"></h4>  
+            </div>  
+            <div class="lessons-grid" id="lesson-item-grid" style="display: grid; gap: 15px;"></div>  
+        </div>  
+    </section>  
+</main>  
+
+<footer style="margin-top: 50px; padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.05); text-align: center;">  
+    <div class="container">  
+        <div class="glass-panel" style="padding: 20px; max-width: 600px; margin: 0 auto 20px;">  
+            <i class="fas fa-hands-praying" style="font-size: 1.5em; color: var(--sky); margin-bottom: 10px;"></i>  
+            <p style="color: var(--text); font-size: 0.9em;">نسألكم خالص الدعاء لي ولوالدي، وأن ييسر الله لي إنهاء فترة التجنيد على خير والعودة إليكم في أسرع وقت.</p>  
+        </div>  
+        <p style="color: var(--muted); font-size: 0.8em;">جميع الحقوق محفوظة © كيمستوري - د. فارس ٢٠٢٦</p>  
+    </div>  
+</footer>  
+
+<script src="app.js"></script>
+</body>  
 </html>
