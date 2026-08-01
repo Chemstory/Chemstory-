@@ -79,38 +79,92 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }, 1000);
 
-    // ===== 5. منطق الصفحة الرئيسية (التنقل وفتح الأبواب) =====
+    // ===== 5. منطق الصفحة الرئيسية (الرجوع الذكي + الخلفيات الديناميكية) =====
     const mainChapterGrid = document.getElementById('main-chapter-grid');
     if (mainChapterGrid) {
         const lessonsPanel = document.getElementById('lessons-panel');
         const lessonItemGrid = document.getElementById('lesson-item-grid');
         const currentChapterTitle = document.getElementById('current-chapter-title');
-        
+        const dynamicBgContainer = document.getElementById('dynamic-bg');
+
+        // الأيقونات المعبرة عن كل باب
+        const chapterIcons = {
+            ch1: ['fa-atom', 'fa-cogs', 'fa-cubes'], // ذرات وعناصر
+            ch2: ['fa-flask', 'fa-vial', 'fa-vials'], // كيمياء تحليلية
+            ch3: ['fa-balance-scale', 'fa-temperature-high'], // اتزان وحرارة
+            ch4: ['fa-bolt', 'fa-plug', 'fa-car-battery'], // كهرباء
+            ch5: ['fa-project-diagram', 'fa-hexagon', 'fa-dna'], // عضوية وروابط
+            rev: ['fa-check-double', 'fa-tasks'] // مراجعات
+        };
+
+        function showLessons(chapterKey, pushToHistory = true) {
+            const data = chapterData[chapterKey];
+            if (!data) return;
+            currentChapterTitle.innerText = data.title;
+            lessonsPanel.style.setProperty('--chapter-color', data.color);
+            lessonItemGrid.innerHTML = '';
+            
+            // توليد الخلفية الديناميكية
+            if (dynamicBgContainer) {
+                dynamicBgContainer.innerHTML = '';
+                const icons = chapterIcons[chapterKey] || ['fa-atom'];
+                for (let i = 0; i < 12; i++) {
+                    const icon = document.createElement('i');
+                    const randomIcon = icons[Math.floor(Math.random() * icons.length)];
+                    icon.className = `fas ${randomIcon} floating-icon`;
+                    icon.style.left = `${Math.random() * 100}%`;
+                    icon.style.fontSize = `${Math.random() * 3 + 1}em`;
+                    icon.style.animationDuration = `${Math.random() * 10 + 10}s`;
+                    icon.style.animationDelay = `-${Math.random() * 10}s`;
+                    dynamicBgContainer.appendChild(icon);
+                }
+            }
+            
+            data.lessons.forEach((lesson) => {
+                let iconClass = lesson.type === "workshop" ? "fas fa-tasks" : lesson.type === "pdf" ? "fas fa-file-pdf" : "fas fa-play-circle";
+                const a = document.createElement('a');
+                a.href = lesson.link; a.target = "_blank"; a.className = "lesson-card glass-panel";
+                a.innerHTML = `<div class="lesson-icon-wrap-l"><i class="${iconClass}"></i></div>
+                               <div class="lesson-content"><p class="lesson-card-title" style="margin:0; color:#fff">${lesson.title}</p></div>`;
+                lessonItemGrid.appendChild(a);
+            });
+
+            mainChapterGrid.style.display = 'none';
+            lessonsPanel.style.display = 'block';
+            window.scrollTo({ top: lessonsPanel.offsetTop - 30, behavior: 'smooth' });
+
+            // إضافة السجل عشان زرار الرجوع بتاع الموبايل يشتغل
+            if (pushToHistory) history.pushState({ view: 'lessons', chapter: chapterKey }, "");
+        }
+
+        function hideLessons(shouldPopHistory = false) {
+            lessonsPanel.style.display = 'none';
+            mainChapterGrid.style.display = 'grid';
+            window.scrollTo({ top: mainChapterGrid.offsetTop - 50, behavior: 'smooth' });
+            if (shouldPopHistory && history.state && history.state.view === 'lessons') history.back();
+        }
+
+        // الاستماع لزرار الرجوع في الموبايل أو المتصفح
+        window.addEventListener('popstate', (event) => {
+            if (event.state === null) {
+                hideLessons(false);
+            } else if (event.state && event.state.view === 'lessons') {
+                showLessons(event.state.chapter, false);
+            }
+        });
+
         mainChapterGrid.addEventListener('click', (e) => {
             const card = e.target.closest('.chapter-card'); 
             if (card && card.dataset.chapter) {
-                const data = chapterData[card.dataset.chapter];
-                currentChapterTitle.innerText = data.title;
-                lessonItemGrid.innerHTML = '';
-                
-                data.lessons.forEach((lesson) => {
-                    let iconClass = lesson.type === "workshop" ? "fas fa-tasks" : lesson.type === "pdf" ? "fas fa-file-pdf" : "fas fa-play-circle";
-                    const a = document.createElement('a');
-                    a.href = lesson.link; a.target = "_blank"; a.className = "lesson-card glass-panel";
-                    a.innerHTML = `<div class="lesson-icon-wrap-l"><i class="${iconClass}"></i></div>
-                                   <div class="lesson-content"><p class="lesson-card-title" style="margin:0; color:#fff">${lesson.title}</p></div>`;
-                    lessonItemGrid.appendChild(a);
-                });
-                mainChapterGrid.style.display = 'none';
-                lessonsPanel.style.display = 'block';
+                showLessons(card.dataset.chapter);
             }
         });
 
         document.getElementById('back-to-chapters')?.addEventListener('click', () => {
-            lessonsPanel.style.display = 'none';
-            mainChapterGrid.style.display = 'grid';
+            hideLessons(true);
         });
     }
+
 
     // ===== 6. منطق معسكر الدور الثاني (حفظ التقدم) =====
     const backlogTableBody = document.getElementById('backlog-table-body');
