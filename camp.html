@@ -1,50 +1,51 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>معسكر الإنقاذ | كيمستوري</title>
-    <link rel="stylesheet" href="style.css">
-    <meta name="theme-color" content="#09203f">
-    <link rel="icon" type="image/png" href="icon-192.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
+<!DOCTYPE html>  
+<html lang="ar" dir="rtl">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">  
+    <title>معسكر الدور الثاني | كيمستوري</title>  
+    <link rel="stylesheet" href="style.css">  
+    <meta name="theme-color" content="#030812">  
+    <link rel="icon" type="image/png" href="icon-192.png">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  
+</head>  
+<body>  
+<div class="ambient-glow"></div>
 
-    <header style="padding: 20px 0; margin-bottom: 10px; border-radius: 0 0 20px 20px;">
-        <div class="container" style="display: flex; align-items: center; justify-content: space-between; position: relative; z-index: 1;">
-            <a href="index.html" class="back-btn" style="background: rgba(255,255,255,0.1); border: none; color: white;">
-                <i class="fas fa-arrow-right"></i>
-                <span>الرئيسية</span>
-            </a>
-            <h3 style="font-family: 'Tajawal', sans-serif; font-weight: 800; margin: 0;">كيمستوري</h3>
-        </div>
-    </header>
+<header style="padding: 20px 0; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.05);">  
+    <div class="container" style="display: flex; align-items: center; justify-content: space-between;">  
+        <a href="index.html" class="glass-panel" style="padding: 8px 15px; color: white; display: flex; align-items: center; gap: 8px;">  
+            <i class="fas fa-arrow-right"></i> الرئيسية  
+        </a>  
+        <h3 style="font-family: 'Alexandria', sans-serif; color: white; margin: 0;">كيمستوري</h3>  
+    </div>  
+</header>  
 
-    <main class="container backlog-container">
-        <div class="backlog-header">
-            <h2 class="backlog-title">
-                <i class="fas fa-fire-alt fire-icon"></i>
-                معسكر الإنقاذ - لم المتراكم
-            </h2>
-            <p class="backlog-subtitle">خطة إنقاذ من ٢٨ مارس لـ ٢٠ مايو 💪</p>
-        </div>
+<main class="container" style="padding-bottom: 50px;">  
+    <div style="text-align: center; margin-bottom: 30px;">  
+        <h2 style="font-family: 'Alexandria', sans-serif; color: white; font-size: 2em; margin-bottom: 10px;">  
+            <i class="fas fa-fire-alt" style="color: var(--pink); text-shadow: 0 0 15px rgba(255,46,126,0.5);"></i>  
+            معسكر الدور الثاني  
+        </h2>  
+        <p style="color: var(--muted);">خطة إنقاذ ٢٥ يوم (٢ أغسطس - ٢٧ أغسطس) 💪</p>  
+    </div>  
 
-        <div class="progress-dashboard">
-            <div class="progress-meta">
-                <span class="progress-label">مستوى إنجازك يا بطل:</span>
-                <span id="progress-percent" class="progress-percent">0%</span>
-            </div>
-            <div class="progress-bar-container">
-                <div id="progress-bar-fill" class="progress-bar-fill"></div>
-            </div>
-            <p id="status-message" class="status-message">بداية موفقة يا بطل.. الحلم بيتحقق خطوة خطوة!</p>
-        </div>
+    <div class="progress-dashboard glass-panel">  
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">  
+            <span style="color: white; font-weight: bold; font-family: 'Alexandria', sans-serif;">مستوى الإنجاز:</span>  
+            <span id="progress-percent" style="color: var(--sky); font-size: 1.5em; font-weight: 900; font-family: 'Alexandria', sans-serif;">0%</span>  
+        </div>  
+        <div class="progress-bar-container">  
+            <div id="progress-bar-fill" class="progress-bar-fill"></div>  
+        </div>  
+        <p id="status-message" style="color: var(--muted); text-align: center; margin-top: 10px; font-size: 0.9em;">جاري حساب تقدمك...</p>  
+    </div>  
 
-        <div class="backlog-table" id="backlog-table-body">
-            </div>
-    </main>
+    <!-- الجدول سيتم توليده هنا بواسطة الجافاسكريبت -->
+    <div id="backlog-table-body" style="display: flex; flex-direction: column; gap: 10px;">  
+    </div>  
+</main>  
 
-    <script src="app.js"></script>
-</body>
+<script src="app.js"></script>
+</body>  
 </html>
