@@ -40,15 +40,26 @@
         </div>
 
         <div class="teacher-profile-card">  
-            <img src="profile.jpg" alt="مستر فارس" class="profile-img-show" onerror="this.src='https://ui-avatars.com/api/?name=Fares&background=00e1ff&color=fff&size=150&bold=true'">  
+            <div class="profile-img-wrapper">
+                <img src="profile.jpg" alt="مستر فارس" class="profile-img-show" onerror="this.src='https://ui-avatars.com/api/?name=Fares&background=00e1ff&color=fff&size=150&bold=true'">  
+                <div class="profile-ring"></div>
+            </div>
+            
             <span class="rank-badge"><i class="fas fa-certificate"></i> دكتور الكيمياء</span>  
             <h1 class="teacher-name">مستر فارس</h1>  
             <p style="color: var(--muted); margin-bottom: 10px;">شرح كامل ومجاني لوجه الله تعالى <i class="fas fa-heart" style="color: var(--pink);"></i></p>  
             
+            <!-- روابط السوشيال ميديا كاملة -->
             <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">  
-                <a href="https://wa.me/201001499397" target="_blank" class="glass-panel" style="padding: 8px 15px; color: #25D366;"><i class="fab fa-whatsapp"></i> تواصل</a>  
+                <a href="https://wa.me/201001499397" target="_blank" class="glass-panel" style="padding: 8px 15px; color: #25D366;"><i class="fab fa-whatsapp"></i> واتساب</a>  
+                <a href="https://whatsapp.com/channel/0029VaygNoqLikg107YNdh0l" target="_blank" class="glass-panel" style="padding: 8px 15px; color: #25D366;"><i class="fab fa-whatsapp"></i> القناة</a>  
+                <a href="https://www.facebook.com/share/12FsQ25HUQN/" target="_blank" class="glass-panel" style="padding: 8px 15px; color: #1877F2;"><i class="fab fa-facebook-f"></i> فيسبوك</a>  
                 <a href="https://youtube.com/@Chemist_ibrahem_Fares" target="_blank" class="glass-panel" style="padding: 8px 15px; color: #FF0000;"><i class="fab fa-youtube"></i> يوتيوب</a>  
             </div>  
+
+            <div class="logo-bottom-wrapper">  
+                <img src="logo.png" alt="كيمستوري" class="logo-tiny" onerror="this.style.display='none'">  
+            </div>
         </div>  
     </div>  
 </header>  
@@ -111,11 +122,43 @@
         </div>  
 
         <div class="lessons-panel glass-panel" id="lessons-panel" style="display: none; padding: 25px; margin-top: 20px;">  
-            <div style="display: flex; gap: 15px; align-items: center; margin-bottom: 25px;">  
+            <div id="dynamic-bg" class="dynamic-bg-container"></div> <!-- حاوية الخلفية الديناميكية -->
+            <div style="display: flex; gap: 15px; align-items: center; margin-bottom: 25px; position: relative; z-index: 1;">  
                 <button id="back-to-chapters" style="background: rgba(255,255,255,0.1); border: none; color: white; padding: 10px 15px; border-radius: 10px; cursor: pointer;"><i class="fas fa-arrow-right"></i> رجوع</button>  
                 <h4 id="current-chapter-title" style="color: white; margin: 0; font-size: 1.3em;"></h4>  
             </div>  
-            <div class="lessons-grid" id="lesson-item-grid" style="display: grid; gap: 15px;"></div>  
+            <div class="lessons-grid" id="lesson-item-grid" style="display: grid; gap: 15px; position: relative; z-index: 1;"></div>  
+        </div>  
+    </section>  
+
+    <!-- رجوع قسم آراء الطلاب -->
+    <section class="testimonials-container">  
+        <div style="text-align: center; margin-bottom: 20px;">  
+            <h3 style="font-size: 1.5em; color: white;">نصائح أبطال الدفعات السابقة</h3>  
+            <p style="color: var(--muted);">رسائل من زمايلك عشان تشجعك</p>  
+        </div>  
+        <div class="testimonials-grid">  
+            <div class="testi-card glass-panel">  
+                <div class="testi-icon"><i class="fas fa-user-md"></i></div>  
+                <div class="testi-content">  
+                    <h5>د. خالد (طب بشري)</h5>  
+                    <p>"السر في الحل الكتير والمراجعة المستمرة. الكيمياء مادة تقفيل لو اتفهمت صح مع مستر فارس!"</p>  
+                </div>  
+            </div>  
+            <div class="testi-card glass-panel">  
+                <div class="testi-icon" style="color: var(--pink); background: rgba(255,46,126,0.1);"><i class="fas fa-stethoscope"></i></div>  
+                <div class="testi-content">  
+                    <h5>د. حفصه (طب أسنان)</h5>  
+                    <p>"عدم التراكم هو اللي وصلني لهدفي. مستر فارس كان دايماً بيسهل الصعب وينظم دماغنا."</p>  
+                </div>  
+            </div>  
+            <div class="testi-card glass-panel">  
+                <div class="testi-icon" style="color: var(--success); background: rgba(46,204,113,0.1);"><i class="fas fa-pills"></i></div>  
+                <div class="testi-content">  
+                    <h5>د. ياسمين (صيدلة)</h5>  
+                    <p>"العضوية والتحليلية محتاجين تأسيس وفهم عميق. نصيحتي ليكم: متخافوش من الكيمياء وحبوها."</p>  
+                </div>  
+            </div>  
         </div>  
     </section>  
 </main>  
