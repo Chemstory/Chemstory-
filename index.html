@@ -12,36 +12,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  
 </head>  
 <body>  
-<!-- تأثيرات الإضاءة في الخلفية -->
 <div class="ambient-glow"></div>
 <div class="ambient-glow-2"></div>
 
 <div id="page-loader" class="page-loader" style="position: fixed; inset: 0; background: var(--bg); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 9999; transition: 0.5s;">  
     <h2 style="color: var(--sky); font-family: 'Alexandria', sans-serif;">كيمستوري</h2>  
-    <p style="color: var(--muted);">يتم تحضير المعمل...</p>
+    <p style="color: var(--muted);">يتم تجهيز المعمل لدفعة 2027...</p>
 </div>  
 
 <div class="notification-bar glass-panel">  
-    <i class="fas fa-fire quote-icon"></i>  
+    <i class="fas fa-rocket quote-icon"></i>  
     <span id="daily-quote" class="daily-quote-text">يتم تحميل حلمك..</span>  
     <i class="fas fa-star quote-icon"></i>  
 </div>  
 
 <header>  
     <div class="container hero-content">  
-        <!-- العداد التنازلي للدور الثاني -->
-        <div class="countdown-banner glass-panel">
-            <h4><i class="fas fa-stopwatch"></i> متبقي على امتحان الدور الثاني:</h4>
-            <div class="countdown-timer">
-                <div class="time-box"><span id="days">00</span><span>يوم</span></div>
-                <div class="time-box"><span id="hours">00</span><span>ساعة</span></div>
-                <div class="time-box"><span id="mins">00</span><span>دقيقة</span></div>
-            </div>
-        </div>
-
         <div class="teacher-profile-card">  
             <div class="profile-img-wrapper">
-                <img src="profile.jpg" alt="مستر فارس" class="profile-img-show" onerror="this.src='https://ui-avatars.com/api/?name=Fares&background=00e1ff&color=fff&size=150&bold=true'">  
+                <img src="profile.jpg" alt="مستر إبراهيم فارس" class="profile-img-show" onerror="this.src='https://ui-avatars.com/api/?name=Fares&background=00e1ff&color=fff&size=150&bold=true'">  
                 <div class="profile-ring"></div>
             </div>
             
@@ -49,7 +38,6 @@
             <h1 class="teacher-name">مستر فارس</h1>  
             <p style="color: var(--muted); margin-bottom: 10px;">شرح كامل ومجاني لوجه الله تعالى <i class="fas fa-heart" style="color: var(--pink);"></i></p>  
             
-            <!-- روابط السوشيال ميديا كاملة -->
             <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">  
                 <a href="https://wa.me/201001499397" target="_blank" class="glass-panel" style="padding: 8px 15px; color: #25D366;"><i class="fab fa-whatsapp"></i> واتساب</a>  
                 <a href="https://whatsapp.com/channel/0029VaygNoqLikg107YNdh0l" target="_blank" class="glass-panel" style="padding: 8px 15px; color: #25D366;"><i class="fab fa-whatsapp"></i> القناة</a>  
@@ -66,63 +54,50 @@
 
 <main class="container content-wrapper">  
     <section class="chapters-grid-container" id="chapters-section">  
-        <div style="text-align: center; margin-bottom: 30px;">  
+        <div style="text-align: center; margin-bottom: 30px; animation: fadeInDown 0.8s ease;">  
             <h3 style="font-size: 1.8em; color: white;">منهج الكيمياء للثانوية العامة</h3>  
             <p style="color: var(--muted);">اختر الباب لبدء المذاكرة</p>  
         </div>  
 
         <div class="chapters-grid" id="main-chapter-grid">  
-            
-            <!-- كارت المعسكر الجديد -->
-            <a href="camp.html" class="chapter-card glass-panel" style="--card-color: #ff2e7e; border: 1px solid rgba(255,46,126,0.3);">  
-                <div class="chapter-icon-wrap" style="background: rgba(255, 46, 126, 0.2);"><i class="fas fa-fire-alt"></i></div>  
-                <div>  
-                    <h4 class="chapter-card-title">معسكر الدور الثاني</h4>  
-                    <p class="chapter-card-desc">خطة ٢٥ يوم لضمان النجاح (تفاعلي)</p>  
-                </div>  
-            </a>  
-
-            <div class="chapter-card glass-panel" data-chapter="ch1" style="--card-color: #00e1ff;">  
+            <div class="chapter-card glass-panel fade-in-up" data-chapter="ch1" style="--card-color: #00e1ff; animation-delay: 0.1s;">  
                 <div class="chapter-number">01</div>  
                 <div class="chapter-icon-wrap"><i class="fas fa-atom"></i></div>  
                 <div><h4 class="chapter-card-title">العناصر الانتقالية</h4><p class="chapter-card-desc">السلسلة الأولى، الحديد وسبائكه</p></div>  
             </div>  
 
-            <div class="chapter-card glass-panel" data-chapter="ch2" style="--card-color: #8b5cf6;">  
+            <div class="chapter-card glass-panel fade-in-up" data-chapter="ch2" style="--card-color: #8b5cf6; animation-delay: 0.2s;">  
                 <div class="chapter-number">02</div>  
                 <div class="chapter-icon-wrap"><i class="fas fa-flask"></i></div>  
                 <div><h4 class="chapter-card-title">الكيمياء التحليلية</h4><p class="chapter-card-desc">الكاتيونات، الأنيونات، المعايرة</p></div>  
             </div>  
 
-            <div class="chapter-card glass-panel" data-chapter="ch3" style="--card-color: #2ecc71;">  
+            <div class="chapter-card glass-panel fade-in-up" data-chapter="ch3" style="--card-color: #2ecc71; animation-delay: 0.3s;">  
                 <div class="chapter-number">03</div>  
                 <div class="chapter-icon-wrap"><i class="fas fa-balance-scale"></i></div>  
                 <div><h4 class="chapter-card-title">الاتزان الكيميائي</h4><p class="chapter-card-desc">العوامل المؤثرة، تأين الماء</p></div>  
             </div>  
 
-            <div class="chapter-card glass-panel" data-chapter="ch4" style="--card-color: #ff2e7e;">  
+            <div class="chapter-card glass-panel fade-in-up" data-chapter="ch4" style="--card-color: #ff2e7e; animation-delay: 0.4s;">  
                 <div class="chapter-number">04</div>  
                 <div class="chapter-icon-wrap"><i class="fas fa-bolt"></i></div>  
                 <div><h4 class="chapter-card-title">الكيمياء الكهربية</h4><p class="chapter-card-desc">خلية دانيال، الخلايا الجلفانية</p></div>  
             </div>  
 
-            <!-- الباب الخامس المضاف حديثاً -->
-            <div class="chapter-card glass-panel" data-chapter="ch5" style="--card-color: #f1c40f;">  
+            <div class="chapter-card glass-panel fade-in-up" data-chapter="ch5" style="--card-color: #f1c40f; animation-delay: 0.5s;">  
                 <div class="chapter-number">05</div>  
                 <div class="chapter-icon-wrap"><i class="fas fa-dna"></i></div>  
                 <div><h4 class="chapter-card-title">الكيمياء العضوية</h4><p class="chapter-card-desc">الهيدروكربونات ومشتقاتها</p></div>  
             </div>  
 
-            <!-- قسم المراجعات النهائية -->
-            <div class="chapter-card glass-panel" data-chapter="rev" style="--card-color: #ff4757; grid-column: 1 / -1;">  
+            <div class="chapter-card glass-panel fade-in-up" data-chapter="rev" style="--card-color: #ff4757; grid-column: 1 / -1; animation-delay: 0.6s;">  
                 <div class="chapter-icon-wrap"><i class="fas fa-tasks"></i></div>  
-                <div><h4 class="chapter-card-title">المراجعات النهائية والاسترشادي</h4><p class="chapter-card-desc">حل أسئلة النماذج الاسترشادية والمراجعات الشاملة</p></div>  
+                <div><h4 class="chapter-card-title">بنك الأسئلة والمراجعات</h4><p class="chapter-card-desc">حل أسئلة النماذج الاسترشادية والمراجعات الشاملة لكل باب</p></div>  
             </div>  
-
         </div>  
 
         <div class="lessons-panel glass-panel" id="lessons-panel" style="display: none; padding: 25px; margin-top: 20px;">  
-            <div id="dynamic-bg" class="dynamic-bg-container"></div> <!-- حاوية الخلفية الديناميكية -->
+            <div id="dynamic-bg" class="dynamic-bg-container"></div>  
             <div style="display: flex; gap: 15px; align-items: center; margin-bottom: 25px; position: relative; z-index: 1;">  
                 <button id="back-to-chapters" style="background: rgba(255,255,255,0.1); border: none; color: white; padding: 10px 15px; border-radius: 10px; cursor: pointer;"><i class="fas fa-arrow-right"></i> رجوع</button>  
                 <h4 id="current-chapter-title" style="color: white; margin: 0; font-size: 1.3em;"></h4>  
@@ -131,32 +106,31 @@
         </div>  
     </section>  
 
-    <!-- رجوع قسم آراء الطلاب -->
-    <section class="testimonials-container">  
+    <section class="testimonials-container fade-in-up" style="animation-delay: 0.7s;">  
         <div style="text-align: center; margin-bottom: 20px;">  
             <h3 style="font-size: 1.5em; color: white;">نصائح أبطال الدفعات السابقة</h3>  
-            <p style="color: var(--muted);">رسائل من زمايلك عشان تشجعك</p>  
+            <p style="color: var(--muted);">رسائل من زمايلك عشان تبدأ صح</p>  
         </div>  
         <div class="testimonials-grid">  
             <div class="testi-card glass-panel">  
                 <div class="testi-icon"><i class="fas fa-user-md"></i></div>  
                 <div class="testi-content">  
-                    <h5>د. خالد (طب بشري)</h5>  
-                    <p>"السر في الحل الكتير والمراجعة المستمرة. الكيمياء مادة تقفيل لو اتفهمت صح مع مستر فارس!"</p>  
+                    <h5>د. أحمد (طب بشري)</h5>  
+                    <p>"البداية الصح بتوفر عليك تعب شهور. الكيمياء مادة تقفيل لو اتفهمت صح من أول يوم مع مستر فارس!"</p>  
                 </div>  
             </div>  
             <div class="testi-card glass-panel">  
                 <div class="testi-icon" style="color: var(--pink); background: rgba(255,46,126,0.1);"><i class="fas fa-stethoscope"></i></div>  
                 <div class="testi-content">  
-                    <h5>د. حفصه (طب أسنان)</h5>  
-                    <p>"عدم التراكم هو اللي وصلني لهدفي. مستر فارس كان دايماً بيسهل الصعب وينظم دماغنا."</p>  
+                    <h5>د. ندى (طب أسنان)</h5>  
+                    <p>"أهم حاجة عدم التراكم. مستر فارس كان دايماً بيسهل الصعب وينظم دماغنا، امشوا معاه خطوة بخطوة."</p>  
                 </div>  
             </div>  
             <div class="testi-card glass-panel">  
                 <div class="testi-icon" style="color: var(--success); background: rgba(46,204,113,0.1);"><i class="fas fa-pills"></i></div>  
                 <div class="testi-content">  
-                    <h5>د. ياسمين (صيدلة)</h5>  
-                    <p>"العضوية والتحليلية محتاجين تأسيس وفهم عميق. نصيحتي ليكم: متخافوش من الكيمياء وحبوها."</p>  
+                    <h5>د. فاطمة (صيدلة)</h5>  
+                    <p>"العضوية والتحليلية محتاجين تأسيس وفهم عميق. نصيحتي ليكم: متخافوش من الكيمياء وحبوها من البداية."</p>  
                 </div>  
             </div>  
         </div>  
@@ -169,7 +143,7 @@
             <i class="fas fa-hands-praying" style="font-size: 1.5em; color: var(--sky); margin-bottom: 10px;"></i>  
             <p style="color: var(--text); font-size: 0.9em;">نسألكم خالص الدعاء لي ولوالدي، وأن ييسر الله لي إنهاء فترة التجنيد على خير والعودة إليكم في أسرع وقت.</p>  
         </div>  
-        <p style="color: var(--muted); font-size: 0.8em;">جميع الحقوق محفوظة © كيمستوري - د. فارس ٢٠٢٦</p>  
+        <p style="color: var(--muted); font-size: 0.8em;">جميع الحقوق محفوظة © كيمستوري - د. فارس ٢٠٢٦ - ٢٠٢٧</p>  
     </div>  
 </footer>  
 
